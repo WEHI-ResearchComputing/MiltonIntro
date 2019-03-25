@@ -1,6 +1,9 @@
 <!-- $theme: default -->
 
 # Introduction to Milton
+Evan Thomas
+Research Computing
+
 ---
 
 # Goals for today
@@ -346,23 +349,32 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 | `rsync -avz --delete source/ username@remotemachine:/path/to/destination| Synchronise, absolutely |
 ---
 
-# Part 2: Creating Directories, Moving Files
+# Part 2: Creating Directories, Copying and Moving Files
 * Directories can be created with the `mkdir` command (e.g., `mkdir braf`).
-* Files can be copied with the `cp` command (e.g., `cp gattaca.txt gattaca2.txt`)
+* Files can be copied with the `cp` command 
+	* `cd` - change you you home directory	 
+	* `cp /stornext/HPCScratch/evan/training/gattaca.txt ~` copy a file to you home directory
+	* `cp gattaca.txt gattaca2.txt` make another copy of the file
 * Files can be moved or _renamed_ with the `mv` command (e.g., `mv gattaca2.txt braf`)
 ---
 
 # Part 2: File Differences
-* File differences can be determined by timestamp (e.g., `ls -l gattaca.txt braf/gattaca.txt`)
-* Content differences can be determined by the `diff` command (e.g., `diff gattaca.txt braf/gattaca.txt`)
+* File differences can be determined by timestamp (e.g., `ls -l gattaca.txt braf/gattaca2.txt`)
+* `nano gattaca.txt` and make a change
+* Content differences can be determined by the `diff` command (e.g., `diff gattaca.txt braf/gattaca2.txt`)
 * For a side-by-side representation use the command `sdiff` instead.
-* The command `comm` can compare two files, lines by line (e.g., `comm gattaca.txt braf/gattaca.txt`).
+* The command `comm` can compare two files, lines by line (e.g., `comm gattaca.txt braf/gattaca2.txt`).
+* `cmp` will simply report if there is a difference
 ---
 
 
 # Part 2: Searches and Wildcards
-* To search for files use the find command (e.g., `find . -name '*.txt'`). Compare with `locate` and `whereis`.
-* To search within files, use the `grep` command (e.g., `grep -i ATEK braf/*` or `grep -l`)
+* Simple file searches
+	* `ls braf/*.txt`
+	* `ls /stornext/HPCScratch/evan/training/*.bam`
+* To search for files in an entire direcotry tree use the find command 
+	* `find . -name \*.txt'`
+* To search within files, use the `grep` command (e.g., `grep -i NEV braf/*` or `grep -l`)
 * The most common wildcard is `*`, but there is also `?` (single character).
 * There are also range searches (e.g., `[a-z]` any character between a and z, inclusive)
 ---
@@ -372,98 +384,119 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 * Files can be deleted with the `rm` command (e.g., `rm gattaca.txt`)
 * Empty directories can be deleted with the `rmdir` command (e.g., `rmdir braf`)
 * Directories, files, subdirectories etc can be delted with `rm -rf <<dir>>`
-* BE VERY CAREFUL, ESPECIALLY WITH WILDCARDS!
+* BE VERY CAREFUL
+	* ESPECIALLY WITH WILDCARDS! 
+	* THERE IS NO UNDO OR TRASH! 
+	* THERE MAY BE NO BACKUP!
 * Consider the difference between `rm matlab *` to `rm matlab*`.
 ---
 
 
-# Part 2: Why The File Differences Mattered
-<blockquote>
-BRAF is a human gene that makes a protein (imaginatively) named B-Raf. This protein is involved in sending signals inside cells, which are involved in directing cell growth. In 2002, it was shown to be faulty (mutated) in human cancers. In particular the difference that between the two files "ATVKSRWSGS" and "ATEKSRWSGS" is the difference which leads to susceptibility to metastatic melanoma. 
-</blockquote>
----
-
-
-# Part 3: A Dynamic Environment
-* Environment modules provide for the dynamic modification of the user's environment via module files, such as the location of the application's executables, its manual path, the library path, and so forth.
-* Modulefiles also have the advantages of being shared on many users on a system (such as an HPC system) and easily allowing multiple installations of the same application but with different versions and compilation options.
-* Check the current environment with the `env` (environment) command.
----
-
-
-# Part 3: Environment Modules  Commands
-* The are two implementations of environment modules. The classic modules system was available on the Edward HPC, and the newer Lmod is on Spartan. LMod is considered superior for hierarchies of modules.
+# Part 3: A Dynamic Software Environment
+* Software on Milton Linux systems (and many other HPCs) is provided by the module system
+* Manages diverse software requirements in complex multi-user systems.
+* Manages dependencies
+* Allows multiple versions of the same program
 ---
 
 
 # Part 3: Module Commands I
-| Command                         | Explanation                                            |
-|---------------------------------|:------------------------------------------------------:|
+| Command                       | Explanation                                            |
+|-------------------------------|:------------------------------------------------------:|
 | `module help`                 | List of switches, commands and arguments for modules   |
 | `module avail`                | Lists all the modules which are available to be loaded.|
+| `module avail <string>`       | Lists all the modules starting with `<string>`         |
+| `module avail 2>&1 | grep <string>` | Lists all the modules containing `<string>`      |
 | `module display <modulefile>` | Display paths etc for modulefile                       |
 ---
 
 
 # Part 3: Module Commands I
-| Command                         | Explanation                                            |
-|---------------------------------|:------------------------------------------------------:|
+| Command                       | Explanation                                            |
+|-------------------------------|:------------------------------------------------------:|
 | `module load <modulefile>`    | Loads paths etc to user's environment                  |
 | `module unload <modulefile>`  | Unloads paths etc from user's environment.             |
 | `module list`                 | lists all the modules currently loaded.                |
 ---
 
 
-# Part 3: Module Commands III
-* There is also the `module switch <modulefile1> <modulefile2>`, which unloads one modulefile (modulefile1) and loads another (modulefile2).
-* Lmod modules also support regular expressions, e.g., `module -r avail "^Python"`
-* On Spartan there is also the lmod-specific `module spider <modulename>, which traverses through the system for all modules and provides a description.
----
-
-
 # Part 3: Portable Batch System I
 * The Portable Batch System (or simply PBS) performs job scheduling by assigning unattended background tasks expressed as batch jobs, among the available resources.
 * Originally developed by MRJ Technology Solutions under contract to NASA in the early 1990s. Released as an open-source product as OpenPBS. Forked by Adaptive Computing as TORQUE (Terascale Open-source Resource and QUEue Manager). Many of the original engineering team now part of Altair Engineering who have their own commercial version, PBSPro.
----
+* A batch system typically consists of a resource manager (e.g., TORQUE) and a job scheduler (e.g., Maui, Moab)
+* Our batch system is called **Torquelord3** (TL3)
 
-
-# Part 3: Portable Batch System II
-* A batch system typically consists of a resource manager (e.g., TORQUE) and a job scheduler (e.g., Maui, Moab), or a combination (e.g., PBSPro, Slurm).
-*  TORQUE and MOAB was used on the Edward HPC system. Slurm is used on Spartan.
 ---
 
 
 # Part 3: Slurm Workload Manager
-* Slurm, used on Spartan, began development as a collaborative effort primarily by Lawrence Livermore National Laboratory, SchedMD, Linux NetworX, Hewlett-Packard, and Groupe Bull as a Free Software resource manager. As of November 2015, TOP500 list of most powerful computers in the world indicates that Slurm is the workload manager on six of the top ten systems. Slurm's design is very modular with about 100 optional plugins.
-* There is a repository for converting PBS to Slurm: https://github.com/bjpop/pbs2Slurm
+* Slurm, used at UoM on Spartan and many sites, was developed as a collaborative effort primarily by Lawrence Livermore National Laboratory, SchedMD, Linux NetworX, Hewlett-Packard, and Groupe Bull as a Free Software resource manager. As of November 2015, TOP500 list of most powerful computers in the world indicates that Slurm is the workload manager on six of the top ten systems. Slurm's design is very modular with about 100 optional plugins.
 ---
 
 
 # Part 3: Job Submission Principles
-* The steps for job submission are (a) setup and launch., (b) monitor., and (c) retrieve results and analyse. Jobs are launched from the login node with resource requests and, when the job scheduler decides, run on compute nodes. Some directories (e.g.,. user home or project directories) are shared across the entire cluster so output is an accessible place.
+* The steps for job submission are (a) setup and launch., (b) monitor., and (c) retrieve results and analyse. 
+* Jobs are launched from a _submit_ node with resource requests and, when the job scheduler decides, run on compute nodes.
+	* most Milton nodes can act as submit nodes
+	* c.f. _login_ node
 * Job scripts are simply resource requests (understood by scheduler), a batch of commands (understood by shell) with output to files.
 ---
 
 
 # Part 3: Fair Share
 * A cluster is a shared environment thus a a resource requesting system. Policies ensure that everyone has a "fair share" to the resources (e.g., user processor limits).
-* Spartan's general partition (cloud, physical) treat all jobs equally. The GPGPU has allocation based on purchasing.
+* TL3 treats all users and all resources equally.
+* No single user can have mode than 75% of total processors
+* Heavy users over the previous 7 hours will have lower priority compared to lighter users
+* Precise details of fair share are likely to change over time.
 ---
 
 
-# Part 3: DON'T RUN JOBS ON THE LOGIN NODE!
-* The login node is a **particularly** shared resource. All users will access the login node in order to check their files, submit jobs etc. If one or more users start to run computationally or I/O intensive tasks on the login node (such as forwarding of graphics, copying large files, running multicore jobs), then that will make operations difficult for everyone.
+# Part 3: Backfilling
+* Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout. 
+* When more resource intensive jobs are running it is possible that gaps ends up in the resource allocation. To fill these gaps a best effort is made for low-resource jobs to slot into these spaces.
+* For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.
 ---
 
 
 <img src="http://levlafayette.com/files/rabbitjobs.png" width="100%" height="100%" title="Job submission using rabbits" />
 From the IBM 'Red Book' on Job Submission.
+
 ---
 
 
-# Part 2: Partitions and Queues
-* Setup and launch consists of writing a short script that initially makes resource requests 
-(walltime, processors, memory, queues) and then commands (loading modules, changing 
+# Part 3: What to run and what not to run on unix500
+* unix500 is a shared resource
+* Primarily for 
+	* test and development
+	* script and file preparation
+* Some heavy processing is OK
+	* 8 CPUs
+	* 24 GB memory
+	* 24 hours elapsed time
+* The batch system will more stable and more performant
+---
+
+
+# Part 3: Queues
+* Jobs are submitted to queues
+	* different resource types, e.g. GPU nodes
+	* different service levels, usually coupled to resource constraints
+
+```
+$ qstat -Q
+Queue              Max    Tot   Ena   Str   Que   Run   Hld   Wat   Trn   Ext T   Cpt
+----------------
+standard             0    250   yes   yes    81   169     0     0     0     0 E     0
+submit               0      0   yes   yes     0     0     0     0     0     0 R     0
+submit_2xp100        0      0   yes   yes     0     0     0     0     0     0 R     0
+standard_2xp100      0      8   yes   yes     0     6     0     0     0     0 E     2
+skylake              0      0   yes   yes     0     0     0     0     0     0 E     0
+```
+---
+
+
+* Setup and launch consists of writing a short script or command that initially makes resource requests (walltime, processors, memory, queues) and then commands (loading modules, changing 
 directories, running executables against datasets etc), and optionally checking queueing system.
 * Core command for checking paritions is `sinfo -s`, or `sinfo -p $partition` for partition and node status. Major partitions are: `cloud`, `physical`, `gpgpu`. Note also `longcloud`, and `shortgpgpu`.
 * Core command for checking queue `squeue` or `showq` (on Spartan).
@@ -569,12 +602,6 @@ srun -N 1 -n 1 -t 06:00:00 ./myserialapp
 ```
 ---
 
-
-# Part 4: Backfilling
-* Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout. 
-* When more resource intensive (e.g., multiple node) jobs are running it is possible that gaps ends up in the resource allocation. To fill these gaps a best effort is made for low-resource jobs to slot into these spaces.
-* For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.
----
 
 
 # Part 4: Memory Allocation
