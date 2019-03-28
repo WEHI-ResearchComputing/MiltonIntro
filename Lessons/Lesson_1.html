@@ -1,0 +1,1226 @@
+<!DOCTYPE html><html lang="en-AU"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body,html{background:#000;height:100%;margin:0;overflow:hidden}.bespoke-marp-osc{display:none;opacity:0}.bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}.bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;-webkit-transform:translateX(-50%);transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;z-index:1}.bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}.bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}.bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}.bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}.bespoke-marp-parent>.bespoke-marp-osc>button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}.bespoke-marp-parent>.bespoke-marp-osc>button:disabled{cursor:not-allowed;opacity:.15!important}.bespoke-marp-parent>.bespoke-marp-osc>button:hover{opacity:1}.bespoke-marp-parent>.bespoke-marp-osc>button:hover:active{opacity:.6}.bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled){transition:none}.bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTBMMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;height:32px;overflow:hidden;text-indent:100%;white-space:nowrap;width:32px}.bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMzIgOTBsNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;height:32px;overflow:hidden;text-indent:100%;white-space:nowrap;width:32px}.bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDBsMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;height:32px;overflow:hidden;text-indent:100%;white-space:nowrap;width:32px}.bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen].exit{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwbDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}.bespoke-marp-parent.bespoke-marp-inactive{cursor:none}.bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}svg.bespoke-marp-slide{height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{pointer-events:auto;z-index:0}.bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}.bespoke-progress-parent+.bespoke-marp-parent{top:5px}.bespoke-progress-parent .bespoke-progress-bar{flex:0 0 0;background:#0288d1;transition:flex-basis .2s cubic-bezier(0,1,1,1)}}@media print{.bespoke-marp-osc,.bespoke-progress-parent{display:none!important;transition:none!important}.bespoke-marp-parent{top:0}}</style><style>article#presentation > svg > foreignObject > section {
+  width: 1280px;
+  height: 720px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  scroll-snap-align: center center;
+}article#presentation > svg > foreignObject > section::after {
+  bottom: 0;
+  content: attr(data-marpit-pagination);
+  padding: inherit;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}article#presentation > svg > foreignObject > section:not([data-marpit-pagination])::after {
+  display: none;
+}/* Normalization */article#presentation > svg > foreignObject > section h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}@page {
+  size: 1280px 720px;
+  margin: 0;
+}@media print {html, body {
+  background-color: #fff;
+  margin: 0;
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+}
+  article#presentation > svg > foreignObject > section {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  article#presentation > svg > foreignObject > section, article#presentation > svg > foreignObject > section * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  article#presentation > svg[data-marpit-svg] {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+  }
+}article#presentation > svg > foreignObject > section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){article#presentation > svg > foreignObject > section svg[data-marp-fitting=svg]{position:static}}article#presentation > svg > foreignObject > section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){article#presentation > svg > foreignObject > section svg[data-marp-fitting=svg].__reflow__{position:relative}}article#presentation > svg > foreignObject > section [data-marp-fitting-svg-content]{display:table;white-space:nowrap}article#presentation > svg > foreignObject > section [data-marp-fitting-svg-content-wrap]{white-space:pre}article#presentation > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+ * Marp default theme.
+ *
+ * @theme default
+ */@font-face{font-family:octicons-link;src:url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format("woff")}article#presentation > svg > foreignObject > section .markdown-body .octicon,article#presentation > svg > foreignObject > section .octicon{display:inline-block;fill:currentColor;vertical-align:text-bottom}article#presentation > svg > foreignObject > section .markdown-body .anchor,article#presentation > svg > foreignObject > section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}article#presentation > svg > foreignObject > section .markdown-body .anchor:focus,article#presentation > svg > foreignObject > section .anchor:focus{outline:none}article#presentation > svg > foreignObject > section .markdown-body h1 .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h2 .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h3 .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h4 .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h5 .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h6 .octicon-link,article#presentation > svg > foreignObject > section h1 .octicon-link,article#presentation > svg > foreignObject > section h2 .octicon-link,article#presentation > svg > foreignObject > section h3 .octicon-link,article#presentation > svg > foreignObject > section h4 .octicon-link,article#presentation > svg > foreignObject > section h5 .octicon-link,article#presentation > svg > foreignObject > section h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}article#presentation > svg > foreignObject > section .markdown-body h1:hover .anchor,article#presentation > svg > foreignObject > section .markdown-body h2:hover .anchor,article#presentation > svg > foreignObject > section .markdown-body h3:hover .anchor,article#presentation > svg > foreignObject > section .markdown-body h4:hover .anchor,article#presentation > svg > foreignObject > section .markdown-body h5:hover .anchor,article#presentation > svg > foreignObject > section .markdown-body h6:hover .anchor,article#presentation > svg > foreignObject > section h1:hover .anchor,article#presentation > svg > foreignObject > section h2:hover .anchor,article#presentation > svg > foreignObject > section h3:hover .anchor,article#presentation > svg > foreignObject > section h4:hover .anchor,article#presentation > svg > foreignObject > section h5:hover .anchor,article#presentation > svg > foreignObject > section h6:hover .anchor{text-decoration:none}article#presentation > svg > foreignObject > section .markdown-body h1:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h2:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h3:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h4:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h5:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section .markdown-body h6:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section h1:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section h2:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section h3:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section h4:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section h5:hover .anchor .octicon-link,article#presentation > svg > foreignObject > section h6:hover .anchor .octicon-link{visibility:visible}article#presentation > svg > foreignObject > section .markdown-body,article#presentation > svg > foreignObject > section{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#24292e;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.5;word-wrap:break-word}article#presentation > svg > foreignObject > section .markdown-body .pl-c,article#presentation > svg > foreignObject > section .pl-c{color:#6a737d}article#presentation > svg > foreignObject > section .markdown-body .pl-c1,article#presentation > svg > foreignObject > section .markdown-body .pl-s .pl-v,article#presentation > svg > foreignObject > section .pl-c1,article#presentation > svg > foreignObject > section .pl-s .pl-v{color:#005cc5}article#presentation > svg > foreignObject > section .markdown-body .pl-e,article#presentation > svg > foreignObject > section .markdown-body .pl-en,article#presentation > svg > foreignObject > section .pl-e,article#presentation > svg > foreignObject > section .pl-en{color:#6f42c1}article#presentation > svg > foreignObject > section .markdown-body .pl-s .pl-s1,article#presentation > svg > foreignObject > section .markdown-body .pl-smi,article#presentation > svg > foreignObject > section .pl-s .pl-s1,article#presentation > svg > foreignObject > section .pl-smi{color:#24292e}article#presentation > svg > foreignObject > section .markdown-body .pl-ent,article#presentation > svg > foreignObject > section .pl-ent{color:#22863a}article#presentation > svg > foreignObject > section .markdown-body .pl-k,article#presentation > svg > foreignObject > section .pl-k{color:#d73a49}article#presentation > svg > foreignObject > section .markdown-body .pl-pds,article#presentation > svg > foreignObject > section .markdown-body .pl-s,article#presentation > svg > foreignObject > section .markdown-body .pl-s .pl-pse .pl-s1,article#presentation > svg > foreignObject > section .markdown-body .pl-sr,article#presentation > svg > foreignObject > section .markdown-body .pl-sr .pl-cce,article#presentation > svg > foreignObject > section .markdown-body .pl-sr .pl-sra,article#presentation > svg > foreignObject > section .markdown-body .pl-sr .pl-sre,article#presentation > svg > foreignObject > section .pl-pds,article#presentation > svg > foreignObject > section .pl-s,article#presentation > svg > foreignObject > section .pl-s .pl-pse .pl-s1,article#presentation > svg > foreignObject > section .pl-sr,article#presentation > svg > foreignObject > section .pl-sr .pl-cce,article#presentation > svg > foreignObject > section .pl-sr .pl-sra,article#presentation > svg > foreignObject > section .pl-sr .pl-sre{color:#032f62}article#presentation > svg > foreignObject > section .markdown-body .pl-smw,article#presentation > svg > foreignObject > section .markdown-body .pl-v,article#presentation > svg > foreignObject > section .pl-smw,article#presentation > svg > foreignObject > section .pl-v{color:#e36209}article#presentation > svg > foreignObject > section .markdown-body .pl-bu,article#presentation > svg > foreignObject > section .pl-bu{color:#b31d28}article#presentation > svg > foreignObject > section .markdown-body .pl-ii,article#presentation > svg > foreignObject > section .pl-ii{background-color:#b31d28;color:#fafbfc}article#presentation > svg > foreignObject > section .markdown-body .pl-c2,article#presentation > svg > foreignObject > section .pl-c2{background-color:#d73a49;color:#fafbfc}article#presentation > svg > foreignObject > section .markdown-body .pl-c2:before,article#presentation > svg > foreignObject > section .pl-c2:before{content:"^M"}article#presentation > svg > foreignObject > section .markdown-body .pl-sr .pl-cce,article#presentation > svg > foreignObject > section .pl-sr .pl-cce{color:#22863a;font-weight:700}article#presentation > svg > foreignObject > section .markdown-body .pl-ml,article#presentation > svg > foreignObject > section .pl-ml{color:#735c0f}article#presentation > svg > foreignObject > section .markdown-body .pl-mh,article#presentation > svg > foreignObject > section .markdown-body .pl-mh .pl-en,article#presentation > svg > foreignObject > section .markdown-body .pl-ms,article#presentation > svg > foreignObject > section .pl-mh,article#presentation > svg > foreignObject > section .pl-mh .pl-en,article#presentation > svg > foreignObject > section .pl-ms{color:#005cc5;font-weight:700}article#presentation > svg > foreignObject > section .markdown-body .pl-mi,article#presentation > svg > foreignObject > section .pl-mi{color:#24292e;font-style:italic}article#presentation > svg > foreignObject > section .markdown-body .pl-mb,article#presentation > svg > foreignObject > section .pl-mb{color:#24292e;font-weight:700}article#presentation > svg > foreignObject > section .markdown-body .pl-md,article#presentation > svg > foreignObject > section .pl-md{background-color:#ffeef0;color:#b31d28}article#presentation > svg > foreignObject > section .markdown-body .pl-mi1,article#presentation > svg > foreignObject > section .pl-mi1{background-color:#f0fff4;color:#22863a}article#presentation > svg > foreignObject > section .markdown-body .pl-mc,article#presentation > svg > foreignObject > section .pl-mc{background-color:#ffebda;color:#e36209}article#presentation > svg > foreignObject > section .markdown-body .pl-mi2,article#presentation > svg > foreignObject > section .pl-mi2{background-color:#005cc5;color:#f6f8fa}article#presentation > svg > foreignObject > section .markdown-body .pl-mdr,article#presentation > svg > foreignObject > section .pl-mdr{color:#6f42c1;font-weight:700}article#presentation > svg > foreignObject > section .markdown-body .pl-ba,article#presentation > svg > foreignObject > section .pl-ba{color:#586069}article#presentation > svg > foreignObject > section .markdown-body .pl-sg,article#presentation > svg > foreignObject > section .pl-sg{color:#959da5}article#presentation > svg > foreignObject > section .markdown-body .pl-corl,article#presentation > svg > foreignObject > section .pl-corl{color:#032f62;text-decoration:underline}article#presentation > svg > foreignObject > section .markdown-body details,article#presentation > svg > foreignObject > section details{display:block}article#presentation > svg > foreignObject > section .markdown-body summary,article#presentation > svg > foreignObject > section summary{display:list-item}article#presentation > svg > foreignObject > section .markdown-body a,article#presentation > svg > foreignObject > section a{background-color:transparent}article#presentation > svg > foreignObject > section .markdown-body a:active,article#presentation > svg > foreignObject > section .markdown-body a:hover,article#presentation > svg > foreignObject > section a:active,article#presentation > svg > foreignObject > section a:hover{outline-width:0}article#presentation > svg > foreignObject > section .markdown-body strong,article#presentation > svg > foreignObject > section strong{font-weight:inherit;font-weight:bolder}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section h1{margin:.67em 0}article#presentation > svg > foreignObject > section .markdown-body img,article#presentation > svg > foreignObject > section img{border-style:none}article#presentation > svg > foreignObject > section .markdown-body code,article#presentation > svg > foreignObject > section .markdown-body kbd,article#presentation > svg > foreignObject > section .markdown-body pre,article#presentation > svg > foreignObject > section code,article#presentation > svg > foreignObject > section kbd,article#presentation > svg > foreignObject > section pre{font-family:monospace,monospace;font-size:1em}article#presentation > svg > foreignObject > section .markdown-body hr,article#presentation > svg > foreignObject > section hr{box-sizing:content-box;overflow:visible}article#presentation > svg > foreignObject > section .markdown-body input,article#presentation > svg > foreignObject > section input{font:inherit;margin:0;overflow:visible}article#presentation > svg > foreignObject > section .markdown-body [type=checkbox],article#presentation > svg > foreignObject > section [type=checkbox]{box-sizing:border-box;padding:0}article#presentation > svg > foreignObject > section .markdown-body *,article#presentation > svg > foreignObject > section *{box-sizing:border-box}article#presentation > svg > foreignObject > section .markdown-body input,article#presentation > svg > foreignObject > section input{font-family:inherit;font-size:inherit;line-height:inherit}article#presentation > svg > foreignObject > section .markdown-body a,article#presentation > svg > foreignObject > section a{color:#0366d6;text-decoration:none}article#presentation > svg > foreignObject > section .markdown-body a:hover,article#presentation > svg > foreignObject > section a:hover{text-decoration:underline}article#presentation > svg > foreignObject > section .markdown-body strong,article#presentation > svg > foreignObject > section strong{font-weight:600}article#presentation > svg > foreignObject > section .markdown-body hr,article#presentation > svg > foreignObject > section hr{background:transparent;border-bottom:1px solid #dfe2e5;height:0;margin:15px 0;overflow:hidden}article#presentation > svg > foreignObject > section .markdown-body hr:before,article#presentation > svg > foreignObject > section hr:before{content:"";display:table}article#presentation > svg > foreignObject > section .markdown-body hr:after,article#presentation > svg > foreignObject > section hr:after{clear:both;content:"";display:table}article#presentation > svg > foreignObject > section .markdown-body table,article#presentation > svg > foreignObject > section table{border-collapse:collapse;border-spacing:0}article#presentation > svg > foreignObject > section .markdown-body td,article#presentation > svg > foreignObject > section .markdown-body th,article#presentation > svg > foreignObject > section td,article#presentation > svg > foreignObject > section th{padding:0}article#presentation > svg > foreignObject > section .markdown-body details summary,article#presentation > svg > foreignObject > section details summary{cursor:pointer}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section .markdown-body h2,article#presentation > svg > foreignObject > section .markdown-body h3,article#presentation > svg > foreignObject > section .markdown-body h4,article#presentation > svg > foreignObject > section .markdown-body h5,article#presentation > svg > foreignObject > section .markdown-body h6,article#presentation > svg > foreignObject > section h1,article#presentation > svg > foreignObject > section h2,article#presentation > svg > foreignObject > section h3,article#presentation > svg > foreignObject > section h4,article#presentation > svg > foreignObject > section h5,article#presentation > svg > foreignObject > section h6{margin-bottom:0;margin-top:0}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section h1{font-size:32px}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section .markdown-body h2,article#presentation > svg > foreignObject > section h1,article#presentation > svg > foreignObject > section h2{font-weight:600}article#presentation > svg > foreignObject > section .markdown-body h2,article#presentation > svg > foreignObject > section h2{font-size:24px}article#presentation > svg > foreignObject > section .markdown-body h3,article#presentation > svg > foreignObject > section h3{font-size:20px}article#presentation > svg > foreignObject > section .markdown-body h3,article#presentation > svg > foreignObject > section .markdown-body h4,article#presentation > svg > foreignObject > section h3,article#presentation > svg > foreignObject > section h4{font-weight:600}article#presentation > svg > foreignObject > section .markdown-body h4,article#presentation > svg > foreignObject > section h4{font-size:16px}article#presentation > svg > foreignObject > section .markdown-body h5,article#presentation > svg > foreignObject > section h5{font-size:14px}article#presentation > svg > foreignObject > section .markdown-body h5,article#presentation > svg > foreignObject > section .markdown-body h6,article#presentation > svg > foreignObject > section h5,article#presentation > svg > foreignObject > section h6{font-weight:600}article#presentation > svg > foreignObject > section .markdown-body h6,article#presentation > svg > foreignObject > section h6{font-size:12px}article#presentation > svg > foreignObject > section .markdown-body p,article#presentation > svg > foreignObject > section p{margin-bottom:10px;margin-top:0}article#presentation > svg > foreignObject > section .markdown-body blockquote,article#presentation > svg > foreignObject > section blockquote{margin:0}article#presentation > svg > foreignObject > section .markdown-body ol,article#presentation > svg > foreignObject > section .markdown-body ul,article#presentation > svg > foreignObject > section ol,article#presentation > svg > foreignObject > section ul{margin-bottom:0;margin-top:0;padding-left:0}article#presentation > svg > foreignObject > section .markdown-body ol ol,article#presentation > svg > foreignObject > section .markdown-body ul ol,article#presentation > svg > foreignObject > section ol ol,article#presentation > svg > foreignObject > section ul ol{list-style-type:lower-roman}article#presentation > svg > foreignObject > section .markdown-body ol ol ol,article#presentation > svg > foreignObject > section .markdown-body ol ul ol,article#presentation > svg > foreignObject > section .markdown-body ul ol ol,article#presentation > svg > foreignObject > section .markdown-body ul ul ol,article#presentation > svg > foreignObject > section ol ol ol,article#presentation > svg > foreignObject > section ol ul ol,article#presentation > svg > foreignObject > section ul ol ol,article#presentation > svg > foreignObject > section ul ul ol{list-style-type:lower-alpha}article#presentation > svg > foreignObject > section .markdown-body dd,article#presentation > svg > foreignObject > section dd{margin-left:0}article#presentation > svg > foreignObject > section .markdown-body code,article#presentation > svg > foreignObject > section .markdown-body pre,article#presentation > svg > foreignObject > section code,article#presentation > svg > foreignObject > section pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px}article#presentation > svg > foreignObject > section .markdown-body pre,article#presentation > svg > foreignObject > section pre{margin-bottom:0;margin-top:0}article#presentation > svg > foreignObject > section .markdown-body input::-webkit-inner-spin-button,article#presentation > svg > foreignObject > section .markdown-body input::-webkit-outer-spin-button,article#presentation > svg > foreignObject > section input::-webkit-inner-spin-button,article#presentation > svg > foreignObject > section input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}article#presentation > svg > foreignObject > section .markdown-body .border,article#presentation > svg > foreignObject > section .border{border:1px solid #e1e4e8!important}article#presentation > svg > foreignObject > section .markdown-body .border-0,article#presentation > svg > foreignObject > section .border-0{border:0!important}article#presentation > svg > foreignObject > section .markdown-body .border-bottom,article#presentation > svg > foreignObject > section .border-bottom{border-bottom:1px solid #e1e4e8!important}article#presentation > svg > foreignObject > section .markdown-body .rounded-1,article#presentation > svg > foreignObject > section .rounded-1{border-radius:3px!important}article#presentation > svg > foreignObject > section .markdown-body .bg-white,article#presentation > svg > foreignObject > section .bg-white{background-color:#fff!important}article#presentation > svg > foreignObject > section .markdown-body .bg-gray-light,article#presentation > svg > foreignObject > section .bg-gray-light{background-color:#fafbfc!important}article#presentation > svg > foreignObject > section .markdown-body .text-gray-light,article#presentation > svg > foreignObject > section .text-gray-light{color:#6a737d!important}article#presentation > svg > foreignObject > section .markdown-body .mb-0,article#presentation > svg > foreignObject > section .mb-0{margin-bottom:0!important}article#presentation > svg > foreignObject > section .markdown-body .my-2,article#presentation > svg > foreignObject > section .my-2{margin-bottom:8px!important;margin-top:8px!important}article#presentation > svg > foreignObject > section .markdown-body .py-0,article#presentation > svg > foreignObject > section .py-0{padding-bottom:0!important;padding-top:0!important}article#presentation > svg > foreignObject > section .markdown-body .py-2,article#presentation > svg > foreignObject > section .py-2{padding-bottom:8px!important;padding-top:8px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-3,article#presentation > svg > foreignObject > section .markdown-body .px-3,article#presentation > svg > foreignObject > section .pl-3,article#presentation > svg > foreignObject > section .px-3{padding-left:16px!important}article#presentation > svg > foreignObject > section .markdown-body .px-3,article#presentation > svg > foreignObject > section .px-3{padding-right:16px!important}article#presentation > svg > foreignObject > section .markdown-body .f6,article#presentation > svg > foreignObject > section .f6{font-size:12px!important}article#presentation > svg > foreignObject > section .markdown-body .lh-condensed,article#presentation > svg > foreignObject > section .lh-condensed{line-height:1.25!important}article#presentation > svg > foreignObject > section .markdown-body .text-bold,article#presentation > svg > foreignObject > section .text-bold{font-weight:600!important}article#presentation > svg > foreignObject > section .markdown-body:before,article#presentation > svg > foreignObject > section:before{content:"";display:table}article#presentation > svg > foreignObject > section .markdown-body:after,article#presentation > svg > foreignObject > section:after{clear:both;/* content:""; */display:table}article#presentation > svg > foreignObject > section .markdown-body>:first-child,article#presentation > svg > foreignObject > section>:first-child{margin-top:0!important}article#presentation > svg > foreignObject > section .markdown-body>:last-child,article#presentation > svg > foreignObject > section>:last-child{margin-bottom:0!important}article#presentation > svg > foreignObject > section .markdown-body a:not([href]),article#presentation > svg > foreignObject > section a:not([href]){color:inherit;text-decoration:none}article#presentation > svg > foreignObject > section .markdown-body blockquote,article#presentation > svg > foreignObject > section .markdown-body dl,article#presentation > svg > foreignObject > section .markdown-body ol,article#presentation > svg > foreignObject > section .markdown-body p,article#presentation > svg > foreignObject > section .markdown-body pre,article#presentation > svg > foreignObject > section .markdown-body table,article#presentation > svg > foreignObject > section .markdown-body ul,article#presentation > svg > foreignObject > section blockquote,article#presentation > svg > foreignObject > section dl,article#presentation > svg > foreignObject > section ol,article#presentation > svg > foreignObject > section p,article#presentation > svg > foreignObject > section pre,article#presentation > svg > foreignObject > section table,article#presentation > svg > foreignObject > section ul{margin-bottom:16px;margin-top:0}article#presentation > svg > foreignObject > section .markdown-body hr,article#presentation > svg > foreignObject > section hr{background-color:#e1e4e8;border:0;height:.25em;margin:24px 0;padding:0}article#presentation > svg > foreignObject > section .markdown-body blockquote,article#presentation > svg > foreignObject > section blockquote{border-left:.25em solid #dfe2e5;color:#6a737d;padding:0 1em}article#presentation > svg > foreignObject > section .markdown-body blockquote>:first-child,article#presentation > svg > foreignObject > section blockquote>:first-child{margin-top:0}article#presentation > svg > foreignObject > section .markdown-body blockquote>:last-child,article#presentation > svg > foreignObject > section blockquote>:last-child{margin-bottom:0}article#presentation > svg > foreignObject > section .markdown-body kbd,article#presentation > svg > foreignObject > section kbd{border:1px solid #c6cbd1;border-bottom-color:#959da5;box-shadow:inset 0 -1px 0 #959da5;font-size:11px}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section .markdown-body h2,article#presentation > svg > foreignObject > section .markdown-body h3,article#presentation > svg > foreignObject > section .markdown-body h4,article#presentation > svg > foreignObject > section .markdown-body h5,article#presentation > svg > foreignObject > section .markdown-body h6,article#presentation > svg > foreignObject > section h1,article#presentation > svg > foreignObject > section h2,article#presentation > svg > foreignObject > section h3,article#presentation > svg > foreignObject > section h4,article#presentation > svg > foreignObject > section h5,article#presentation > svg > foreignObject > section h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section h1{font-size:2em}article#presentation > svg > foreignObject > section .markdown-body h1,article#presentation > svg > foreignObject > section .markdown-body h2,article#presentation > svg > foreignObject > section h1,article#presentation > svg > foreignObject > section h2{border-bottom:1px solid #eaecef;padding-bottom:.3em}article#presentation > svg > foreignObject > section .markdown-body h2,article#presentation > svg > foreignObject > section h2{font-size:1.5em}article#presentation > svg > foreignObject > section .markdown-body h3,article#presentation > svg > foreignObject > section h3{font-size:1.25em}article#presentation > svg > foreignObject > section .markdown-body h4,article#presentation > svg > foreignObject > section h4{font-size:1em}article#presentation > svg > foreignObject > section .markdown-body h5,article#presentation > svg > foreignObject > section h5{font-size:.875em}article#presentation > svg > foreignObject > section .markdown-body h6,article#presentation > svg > foreignObject > section h6{color:#6a737d;font-size:.85em}article#presentation > svg > foreignObject > section .markdown-body ol,article#presentation > svg > foreignObject > section .markdown-body ul,article#presentation > svg > foreignObject > section ol,article#presentation > svg > foreignObject > section ul{padding-left:2em}article#presentation > svg > foreignObject > section .markdown-body ol ol,article#presentation > svg > foreignObject > section .markdown-body ol ul,article#presentation > svg > foreignObject > section .markdown-body ul ol,article#presentation > svg > foreignObject > section .markdown-body ul ul,article#presentation > svg > foreignObject > section ol ol,article#presentation > svg > foreignObject > section ol ul,article#presentation > svg > foreignObject > section ul ol,article#presentation > svg > foreignObject > section ul ul{margin-bottom:0;margin-top:0}article#presentation > svg > foreignObject > section .markdown-body li,article#presentation > svg > foreignObject > section li{word-wrap:break-all}article#presentation > svg > foreignObject > section .markdown-body li>p,article#presentation > svg > foreignObject > section li>p{margin-top:16px}article#presentation > svg > foreignObject > section .markdown-body li+li,article#presentation > svg > foreignObject > section li+li{margin-top:.25em}article#presentation > svg > foreignObject > section .markdown-body dl,article#presentation > svg > foreignObject > section dl{padding:0}article#presentation > svg > foreignObject > section .markdown-body dl dt,article#presentation > svg > foreignObject > section dl dt{font-size:1em;font-style:italic;font-weight:600;margin-top:16px;padding:0}article#presentation > svg > foreignObject > section .markdown-body dl dd,article#presentation > svg > foreignObject > section dl dd{margin-bottom:16px;padding:0 16px}article#presentation > svg > foreignObject > section .markdown-body table,article#presentation > svg > foreignObject > section table{display:block;overflow:auto;width:100%}article#presentation > svg > foreignObject > section .markdown-body table th,article#presentation > svg > foreignObject > section table th{font-weight:600}article#presentation > svg > foreignObject > section .markdown-body table td,article#presentation > svg > foreignObject > section .markdown-body table th,article#presentation > svg > foreignObject > section table td,article#presentation > svg > foreignObject > section table th{border:1px solid #dfe2e5;padding:6px 13px}article#presentation > svg > foreignObject > section .markdown-body table tr,article#presentation > svg > foreignObject > section table tr{background-color:#fff;border-top:1px solid #c6cbd1}article#presentation > svg > foreignObject > section .markdown-body table tr:nth-child(2n),article#presentation > svg > foreignObject > section table tr:nth-child(2n){background-color:#f6f8fa}article#presentation > svg > foreignObject > section .markdown-body img,article#presentation > svg > foreignObject > section img{background-color:#fff;box-sizing:content-box;max-width:100%}article#presentation > svg > foreignObject > section .markdown-body img[align=right],article#presentation > svg > foreignObject > section img[align=right]{padding-left:20px}article#presentation > svg > foreignObject > section .markdown-body img[align=left],article#presentation > svg > foreignObject > section img[align=left]{padding-right:20px}article#presentation > svg > foreignObject > section .markdown-body code,article#presentation > svg > foreignObject > section code{background-color:rgba(27,31,35,.05);border-radius:3px;font-size:85%;margin:0;padding:.2em .4em}article#presentation > svg > foreignObject > section .markdown-body pre,article#presentation > svg > foreignObject > section pre{word-wrap:normal}article#presentation > svg > foreignObject > section .markdown-body pre>code,article#presentation > svg > foreignObject > section pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}article#presentation > svg > foreignObject > section .markdown-body .highlight,article#presentation > svg > foreignObject > section .highlight{margin-bottom:16px}article#presentation > svg > foreignObject > section .markdown-body .highlight pre,article#presentation > svg > foreignObject > section .highlight pre{margin-bottom:0;word-break:normal}article#presentation > svg > foreignObject > section .markdown-body .highlight pre,article#presentation > svg > foreignObject > section .markdown-body pre,article#presentation > svg > foreignObject > section .highlight pre,article#presentation > svg > foreignObject > section pre{background-color:#f6f8fa;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}article#presentation > svg > foreignObject > section .markdown-body pre code,article#presentation > svg > foreignObject > section pre code{background-color:transparent;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0;word-wrap:normal}article#presentation > svg > foreignObject > section .markdown-body .commit-tease-sha,article#presentation > svg > foreignObject > section .commit-tease-sha{color:#444d56;display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:90%}article#presentation > svg > foreignObject > section .markdown-body .blob-wrapper,article#presentation > svg > foreignObject > section .blob-wrapper{border-bottom-left-radius:3px;border-bottom-right-radius:3px;overflow-x:auto;overflow-y:hidden}article#presentation > svg > foreignObject > section .markdown-body .blob-wrapper-embedded,article#presentation > svg > foreignObject > section .blob-wrapper-embedded{max-height:240px;overflow-y:auto}article#presentation > svg > foreignObject > section .markdown-body .blob-num,article#presentation > svg > foreignObject > section .blob-num{-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;color:rgba(27,31,35,.3);cursor:pointer;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;line-height:20px;min-width:50px;padding-left:10px;padding-right:10px;text-align:right;user-select:none;vertical-align:top;white-space:nowrap;width:1%}article#presentation > svg > foreignObject > section .markdown-body .blob-num:hover,article#presentation > svg > foreignObject > section .blob-num:hover{color:rgba(27,31,35,.6)}article#presentation > svg > foreignObject > section .markdown-body .blob-num:before,article#presentation > svg > foreignObject > section .blob-num:before{content:attr(data-line-number)}article#presentation > svg > foreignObject > section .markdown-body .blob-code,article#presentation > svg > foreignObject > section .blob-code{line-height:20px;padding-left:10px;padding-right:10px;position:relative;vertical-align:top}article#presentation > svg > foreignObject > section .markdown-body .blob-code-inner,article#presentation > svg > foreignObject > section .blob-code-inner{color:#24292e;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:12px;overflow:visible;white-space:pre;word-wrap:normal}article#presentation > svg > foreignObject > section .markdown-body .pl-token.active,article#presentation > svg > foreignObject > section .markdown-body .pl-token:hover,article#presentation > svg > foreignObject > section .pl-token.active,article#presentation > svg > foreignObject > section .pl-token:hover{background:#ffea7f;cursor:pointer}article#presentation > svg > foreignObject > section .markdown-body kbd,article#presentation > svg > foreignObject > section kbd{background-color:#fafbfc;border:1px solid #d1d5da;border-bottom-color:#c6cbd1;border-radius:3px;box-shadow:inset 0 -1px 0 #c6cbd1;color:#444d56;display:inline-block;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}article#presentation > svg > foreignObject > section .markdown-body :checked+.radio-label,article#presentation > svg > foreignObject > section :checked+.radio-label{border-color:#0366d6;position:relative;z-index:1}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="1"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="1"]{-moz-tab-size:1;-o-tab-size:1;tab-size:1}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="2"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="2"]{-moz-tab-size:2;-o-tab-size:2;tab-size:2}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="3"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="3"]{-moz-tab-size:3;-o-tab-size:3;tab-size:3}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="4"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="4"]{-moz-tab-size:4;-o-tab-size:4;tab-size:4}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="5"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="5"]{-moz-tab-size:5;-o-tab-size:5;tab-size:5}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="6"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="6"]{-moz-tab-size:6;-o-tab-size:6;tab-size:6}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="7"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="7"]{-moz-tab-size:7;-o-tab-size:7;tab-size:7}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="8"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="8"]{-moz-tab-size:8;-o-tab-size:8;tab-size:8}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="9"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="9"]{-moz-tab-size:9;-o-tab-size:9;tab-size:9}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="10"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="10"]{-moz-tab-size:10;-o-tab-size:10;tab-size:10}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="11"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="11"]{-moz-tab-size:11;-o-tab-size:11;tab-size:11}article#presentation > svg > foreignObject > section .markdown-body .tab-size[data-tab-size="12"],article#presentation > svg > foreignObject > section .tab-size[data-tab-size="12"]{-moz-tab-size:12;-o-tab-size:12;tab-size:12}article#presentation > svg > foreignObject > section .markdown-body .task-list-item,article#presentation > svg > foreignObject > section .task-list-item{list-style-type:none}article#presentation > svg > foreignObject > section .markdown-body .task-list-item+.task-list-item,article#presentation > svg > foreignObject > section .task-list-item+.task-list-item{margin-top:3px}article#presentation > svg > foreignObject > section .markdown-body .task-list-item input,article#presentation > svg > foreignObject > section .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}article#presentation > svg > foreignObject > section .markdown-body hr,article#presentation > svg > foreignObject > section hr{border-bottom-color:#eee}article#presentation > svg > foreignObject > section .markdown-body .pl-0,article#presentation > svg > foreignObject > section .pl-0{padding-left:0!important}article#presentation > svg > foreignObject > section .markdown-body .pl-1,article#presentation > svg > foreignObject > section .pl-1{padding-left:4px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-2,article#presentation > svg > foreignObject > section .pl-2{padding-left:8px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-3,article#presentation > svg > foreignObject > section .pl-3{padding-left:16px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-4,article#presentation > svg > foreignObject > section .pl-4{padding-left:24px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-5,article#presentation > svg > foreignObject > section .pl-5{padding-left:32px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-6,article#presentation > svg > foreignObject > section .pl-6{padding-left:40px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-7,article#presentation > svg > foreignObject > section .pl-7{padding-left:48px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-8,article#presentation > svg > foreignObject > section .pl-8{padding-left:64px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-9,article#presentation > svg > foreignObject > section .pl-9{padding-left:80px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-10,article#presentation > svg > foreignObject > section .pl-10{padding-left:96px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-11,article#presentation > svg > foreignObject > section .pl-11{padding-left:112px!important}article#presentation > svg > foreignObject > section .markdown-body .pl-12,article#presentation > svg > foreignObject > section .pl-12{padding-left:128px!important}article#presentation > svg > foreignObject > section .hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}article#presentation > svg > foreignObject > section .hljs-comment,article#presentation > svg > foreignObject > section .hljs-meta{color:#969896}article#presentation > svg > foreignObject > section .hljs-emphasis,article#presentation > svg > foreignObject > section .hljs-quote,article#presentation > svg > foreignObject > section .hljs-string,article#presentation > svg > foreignObject > section .hljs-strong,article#presentation > svg > foreignObject > section .hljs-template-variable,article#presentation > svg > foreignObject > section .hljs-variable{color:#df5000}article#presentation > svg > foreignObject > section .hljs-keyword,article#presentation > svg > foreignObject > section .hljs-selector-tag,article#presentation > svg > foreignObject > section .hljs-type{color:#a71d5d}article#presentation > svg > foreignObject > section .hljs-attribute,article#presentation > svg > foreignObject > section .hljs-bullet,article#presentation > svg > foreignObject > section .hljs-literal,article#presentation > svg > foreignObject > section .hljs-symbol{color:#0086b3}article#presentation > svg > foreignObject > section .hljs-name,article#presentation > svg > foreignObject > section .hljs-section{color:#63a35c}article#presentation > svg > foreignObject > section .hljs-tag{color:#333}article#presentation > svg > foreignObject > section .hljs-attr,article#presentation > svg > foreignObject > section .hljs-selector-attr,article#presentation > svg > foreignObject > section .hljs-selector-class,article#presentation > svg > foreignObject > section .hljs-selector-id,article#presentation > svg > foreignObject > section .hljs-selector-pseudo,article#presentation > svg > foreignObject > section .hljs-title{color:#795da3}article#presentation > svg > foreignObject > section .hljs-addition{color:#55a532;background-color:#eaffea}article#presentation > svg > foreignObject > section .hljs-deletion{color:#bd2c00;background-color:#ffecec}article#presentation > svg > foreignObject > section .hljs-link{text-decoration:underline}article#presentation > svg > foreignObject > section svg[data-marp-fitting=svg]{max-height:563px}article#presentation > svg > foreignObject > section h1{color:#246;font-size:1.6em}article#presentation > svg > foreignObject > section h1,article#presentation > svg > foreignObject > section h2{border-bottom:none}article#presentation > svg > foreignObject > section h2{font-size:1.3em}article#presentation > svg > foreignObject > section h3{font-size:1.1em}article#presentation > svg > foreignObject > section h4{font-size:1.05em}article#presentation > svg > foreignObject > section h5{font-size:1em}article#presentation > svg > foreignObject > section h6{font-size:.9em}article#presentation > svg > foreignObject > section h1 strong,article#presentation > svg > foreignObject > section h2 strong,article#presentation > svg > foreignObject > section h3 strong,article#presentation > svg > foreignObject > section h4 strong,article#presentation > svg > foreignObject > section h5 strong,article#presentation > svg > foreignObject > section h6 strong{font-weight:inherit;color:#48c}article#presentation > svg > foreignObject > section hr{height:0;padding-top:.25em}article#presentation > svg > foreignObject > section pre{border:1px solid #999;line-height:1.15;overflow:visible}article#presentation > svg > foreignObject > section pre code svg[data-marp-fitting=svg]{max-height:529px}article#presentation > svg > foreignObject > section footer,article#presentation > svg > foreignObject > section header{margin:0;position:absolute;left:30px;color:hsla(0,0%,40%,.75);font-size:18px}article#presentation > svg > foreignObject > section header{top:21px}article#presentation > svg > foreignObject > section footer{bottom:21px}article#presentation > svg > foreignObject > section{align-items:stretch;background:#fff;display:flex;flex-direction:column;flex-wrap:nowrap;font-size:29px;height:720px;justify-content:center;padding:78.5px;width:1280px}article#presentation > svg > foreignObject > section>:last-child,article#presentation > svg > foreignObject > section[data-footer]>:nth-last-child(2){margin-bottom:0}article#presentation > svg > foreignObject > section>:first-child,article#presentation > svg > foreignObject > section>header:first-child+*{margin-top:0}article#presentation > svg > foreignObject > section:after{position:absolute;padding:0;right:30px;bottom:21px;font-size:24px;color:#777}article#presentation > svg > foreignObject > section.invert{background-color:#222;color:#e6eaf0}article#presentation > svg > foreignObject > section.invert:after{color:#999}article#presentation > svg > foreignObject > section.invert img{background-color:transparent}article#presentation > svg > foreignObject > section.invert a{color:#50b3ff}article#presentation > svg > foreignObject > section.invert h1{color:#a3c5e7}article#presentation > svg > foreignObject > section.invert h2,article#presentation > svg > foreignObject > section.invert h3,article#presentation > svg > foreignObject > section.invert h4,article#presentation > svg > foreignObject > section.invert h5{color:#ebeff5}article#presentation > svg > foreignObject > section.invert blockquote,article#presentation > svg > foreignObject > section.invert h6{border-color:#3d3f43;color:#939699}article#presentation > svg > foreignObject > section.invert h1 strong,article#presentation > svg > foreignObject > section.invert h2 strong,article#presentation > svg > foreignObject > section.invert h3 strong,article#presentation > svg > foreignObject > section.invert h4 strong,article#presentation > svg > foreignObject > section.invert h5 strong,article#presentation > svg > foreignObject > section.invert h6 strong{color:#7bf}article#presentation > svg > foreignObject > section.invert hr{background-color:#3d3f43}article#presentation > svg > foreignObject > section.invert footer,article#presentation > svg > foreignObject > section.invert header{color:hsla(0,0%,60%,.75)}article#presentation > svg > foreignObject > section.invert code,article#presentation > svg > foreignObject > section.invert kbd{background-color:#111}article#presentation > svg > foreignObject > section.invert kbd{border-color:#666;box-shadow:inset 0 -1px 0 #555;color:#e6eaf0}article#presentation > svg > foreignObject > section.invert table tr{background-color:#12181d;border-color:#60657b}article#presentation > svg > foreignObject > section.invert table tr:nth-child(2n){background-color:#1b2024}article#presentation > svg > foreignObject > section.invert table td,article#presentation > svg > foreignObject > section.invert table th{border-color:#5b5e61}article#presentation > svg > foreignObject > section.invert pre{background-color:#0a0e12;border-color:#777}article#presentation > svg > foreignObject > section.invert pre code{background-color:transparent}article#presentation > svg > foreignObject > section[data-color] h1,article#presentation > svg > foreignObject > section[data-color] h2,article#presentation > svg > foreignObject > section[data-color] h3,article#presentation > svg > foreignObject > section[data-color] h4,article#presentation > svg > foreignObject > section[data-color] h5,article#presentation > svg > foreignObject > section[data-color] h6{color:currentColor}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"] {
+  padding: 0 !important;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"]::before,
+article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"]::after,
+article#presentation > svg > foreignObject > section[data-marpit-advanced-background="content"]::before,
+article#presentation > svg > foreignObject > section[data-marpit-advanced-background="content"]::after {
+  display: none !important;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] {
+  all: initial;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"] {
+  flex-direction: column;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container] {
+  width: 50%;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container] {
+  margin-left: 50%;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure {
+  all: initial;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: auto;
+  margin: 0;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="content"],
+article#presentation > svg > foreignObject > section[data-marpit-advanced-background="pseudo"] {
+  background: transparent !important;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background="pseudo"],
+article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"] {
+  pointer-events: none !important;
+}article#presentation > svg > foreignObject > section[data-marpit-advanced-background-split] {
+  width: 100%;
+  height: 100%;
+}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button></div><article id="presentation"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-theme="default" style="--theme:default;">
+<h1>Introduction to Milton</h1>
+<p>Evan Thomas<br />
+Research Computing</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-theme="default" style="--theme:default;">
+<h1>Goals for today</h1>
+<ul>
+<li>Part 1: Learning about supercomputers and Milton.</li>
+<li>Part 2: Logging on and exploring the Linux Environment.</li>
+<li>Part 3: Learning about software modules and the batch job submission system.</li>
+<li>Part 4: Submitting test jobs.</li>
+<li>Part 5: PBS Command Summaries</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-theme="default" style="--theme:default;">
+<h1>Slide Respository</h1>
+<ul>
+<li>These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.</li>
+<li>A copy of these slides and sample code is available at: <code>https://github.com/WEHI-ResearchComputing/MiltonIntro</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-theme="default" style="--theme:default;">
+<h1>Getting help I</h1>
+<ul>
+<li>More documentation is available on Catalyst: <code>Catalyst -&gt; Research -&gt; Research Computing</code></li>
+<li>Help is available at: <code>helpdesk@wehi.edu.au</code>.</li>
+<li>Other training is also conducted by:
+<ul>
+<li>Research Platforms: <a href="https://research.unimelb.edu.au/infrastructure/research-platform-services">https://research.unimelb.edu.au/infrastructure/research-platform-services</a></li>
+<li>Melbourne Bioinformatics: <a href="https://www.melbournebioinformatics.org.au/">https://www.melbournebioinformatics.org.au/</a></li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-theme="default" style="--theme:default;">
+<h1>Getting help II</h1>
+<ul>
+<li>Join the slack team: <a href="https://milton-wehi.slack.com/signup">https://milton-wehi.slack.com/signup</a>
+<ul>
+<li>This is user to user support. ITS do not monitor it.</li>
+</ul>
+</li>
+<li>Join the MUG mailing list. Send a request to <a href="mailto:research.computing@wehi.edu.au">research.computing@wehi.edu.au</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-theme="default" style="--theme:default;">
+<h1>Part I: Helpdesk</h1>
+<ul>
+<li>Read the Message of the Day when you login!</li>
+<li>If you have
+<ul>
+<li>problems with submitting a job</li>
+<li>need a new application or extension to an existing application installed</li>
+<li>submissions are generating unexpected errors etc.,</li>
+<li>Just have a question</li>
+</ul>
+</li>
+<li>Email helpdesk: <code>helpdesk@wehi.edu.au</code>!</li>
+<li>Do not email individual sysadmins; we need consolidated records. Please be informative about the error or issue.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-theme="default" style="--theme:default;">
+<h1>Part 1: Supercomputers and HPC</h1>
+<ul>
+<li>&quot;Supercomputer&quot; means any single computer system that has exceptional processing power for its time.</li>
+<li>One popular metric (LINPACK) is the number of floating point operations per second (FLOPS) such a system can carry out (<a href="http://top500.org">http://top500.org</a>). HPC Challenge and HPCG are broader, more interesting metrics.</li>
+<li>High Performance Computer (HPC) is any computer system whose architecture allows for above average performance. High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-theme="default" style="--theme:default;">
+<h1>Part 1: Clusters and Research Computing</h1>
+<ul>
+<li>Clustered computing is when two or more computers serve a single resource. This improves performance and provides redundancy in case of failure system. Typically commodity systems with a high-speed local network.</li>
+<li>Research computing refers to the concepts and software applications used by the scientific community to aid research. It does not necessarily equate with high performance computing, or the use of clusters. It is whatever researchers use and do. Not issues of producibility and environments.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-theme="default" style="--theme:default;">
+<h1>Part 1: Parallel Computing</h1>
+<ul>
+<li>With a cluster architecture, applications can be more easily parallelised across them.
+<ul>
+<li><em>Data parallel</em>: running the same task in parallel over different inputs</li>
+<li><em>Task parallel</em>: running a single task in parallel with communication. e.g. sequence alignment; molecular dynamics</li>
+</ul>
+</li>
+<li>Further examples of serial versus parallel; weather forecasting, aerodynamic design, fluid mechanics, radiation modelling, molecullar dynamics, CGI rendering for popular movies, etc. Reality is a parallel system!</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-theme="default" style="--theme:default;">
+<h1>Part 1: HPC Cluster and Parallel Processing Components</h1>
+<ul>
+<li>A chassis or rack, containing multiple computer system units, interconnect, and providing power.</li>
+<li>Computer system units or <em>nodes</em>, containing memory, local disk, and sockets.</li>
+<li>Sockets contain a processor
+<ul>
+<li>which has several <em>cores</em></li>
+<li>each core processes to logical streams of instructions (<em>hyperthreads</em>)</li>
+</ul>
+</li>
+<li>The term Central Processing Unit, <em>CPU</em>, nearly always refers to hyperthread.</li>
+<li>Logical processes have shared resources (e.g., memory) which may have multiple instruction stream threads.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-theme="default" style="--theme:default;">
+<h1>Part 1: Cloud computing</h1>
+<ul>
+<li>Infrastructure as a Service (IaaS)
+<ul>
+<li>Compute, storage and network</li>
+<li>Located in managed datacentres</li>
+<li>Available on demand</li>
+<li>Pay by the minute</li>
+</ul>
+</li>
+<li>Commercial Clouds
+<ul>
+<li>Amazon Web Services (AWS)</li>
+<li>Google Cloud Platform</li>
+<li>Microsoft Azure</li>
+</ul>
+</li>
+<li>Research Clouds
+<ul>
+<li>National eResearch Collaboration Tools and Resources project (Nectar)</li>
+</ul>
+</li>
+<li>Private clouds
+<ul>
+<li>WEHI Research cloud - Milton!</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-theme="default" style="--theme:default;">
+<h1>Part 1: Virtualization</h1>
+<ul>
+<li>Modern data centres present resources in <em>virtual machines</em> (VMs)</li>
+<li>Software running in a VM sees CPUs, memory, disk, network as though they are real</li>
+<li>A physical node may run serveral <em>virtual machines</em>
+<ul>
+<li>Node and machine are used interchangeably</li>
+</ul>
+</li>
+<li>This has a lot of advantages:
+<ul>
+<li>different applications and users can be isolated from each other</li>
+<li>Multiple operating systems can run in the same hardware</li>
+<li>Machines can be easily moved between different hardware to provide the best resource utilisation</li>
+</ul>
+</li>
+<li>Milton uses VMWare data centre software to provide virtualization.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-theme="default" style="--theme:default;">
+<h1>Part 1: Virtualization</h1>
+<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/virtualization.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/virtualization.png</a>&quot; /&gt;</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-theme="default" style="--theme:default;">
+<h1>Part 1: Milton Hardware</h1>
+<ul>
+<li>In 2016 WEHI purchased an <em>on premise</em> High Performance Computer called Milton.</li>
+<li>nearly 2500 cores (2 hyperthreads per core)
+<ul>
+<li>A mix of Skylake and Broadwell Intel processors</li>
+<li>Up to 56 cores in a single physical node</li>
+</ul>
+</li>
+<li>40TB RAM
+<ul>
+<li>configurations from 128GB to 1.5TB (can be reconfigured if required)</li>
+</ul>
+</li>
+<li>A mix of 40GbE and 10GbE network connnections</li>
+<li>20 nVidia P100 GPUs</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-theme="default" style="--theme:default;">
+<h1>Part 1: Milton overview</h1>
+<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/Milton_Overview.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/Milton_Overview.png</a>&quot; /&gt;</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-theme="default" style="--theme:default;">
+<h1>Part 1: Logging In</h1>
+<ul>
+<li>To log on to Milton you need a WEHI logon - that's is!</li>
+<li>Mac OS 10.x.
+<ul>
+<li>Open a terminal</li>
+<li><code>ssh unix500</code></li>
+<li>Type your password</li>
+</ul>
+</li>
+<li>For MS-Windows users, the free PuTTY client is recommended (<a href="http://putty.org">http://putty.org</a>).</li>
+<li><em><strong>Note:</strong></em> Logging into other systems may be more complicated. e.g.  <code>ssh eat@spartan.hpc.unimelb.edu.au</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-theme="default" style="--theme:default;">
+<h1>Part 1: Logging in from Windows</h1>
+<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-1.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-1.png</a>&quot; /&gt;</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-theme="default" style="--theme:default;">
+<h1>Part 1: Logging in from Windows</h1>
+<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-2.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-2.png</a>&quot; /&gt;</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-theme="default" style="--theme:default;">
+<h1>Part 1: SSH Keys, Config, Data Transfers</h1>
+<ul>
+<li>Consider using an <code>.ssh/config</code> file and using passwordless SSH by creating a keypair and adding to your <code>.ssh/authorized_keys</code> file on Spartan.</li>
+<li>SSH Keys will make your life easier. Follow the instructions here: <a href="https://dashboard.hpc.unimelb.edu.au/faq/#how-do-setup-passwordless-ssh-login">https://dashboard.hpc.unimelb.edu.au/faq/#how-do-setup-passwordless-ssh-login</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-theme="default" style="--theme:default;">
+<h1>Part 2: It's a Linux Command Line World</h1>
+<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/gnulinux.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/gnulinux.png</a>&quot; align=&quot;center&quot; height=&quot;25%&quot; width=&quot;25%&quot; vspace=&quot;5&quot; hspace=&quot;5&quot; /&gt;</p>
+<ul>
+<li>The command line interface (CLI) provides a great deal more power and is very resource efficient.</li>
+<li>Linux scales and does so with stability and efficiency.</li>
+<li>Critical software such as the Message Parsing Interface (MPI) and nearly all scientific programs are built for Linux.</li>
+<li>The operating system and many applications are provided as &quot;free and open source&quot; which are better placed to improve, optimize and maintain.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-theme="default" style="--theme:default;">
+<h1>Part 2: File System Hierarchy</h1>
+<ul>
+<li>Files are organised in a hierachy of directories (or folders)</li>
+<li>When a user logs in on a Linux or other UNIX-like system on the command line, they start in their <em>home</em> directory (<code>/home/&lt;username&gt;</code>).
+<ul>
+<li>WEHI user names are usually <code>lastname.i</code>, e.g. <code>thomas.e</code></li>
+</ul>
+</li>
+<li>&quot;Everything in the UNIX system is a file&quot; (Kernighan &amp; Pike, 1984, 41).</li>
+<li>See <a href="https://swcarpentry.github.io/shell-novice/fig/standard-filesystem-hierarchy.svg">https://swcarpentry.github.io/shell-novice/fig/standard-filesystem-hierarchy.svg</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-theme="default" style="--theme:default;">
+<h1>Part 2: Exploring The Environment</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>whoami</code></td>
+<td style="text-align:center">&quot;Who Am I?; prints the effective user id</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>pwd</code></td>
+<td style="text-align:center">&quot;Print working directory&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ls</code></td>
+<td style="text-align:center">&quot;List&quot; directory listing</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-theme="default" style="--theme:default;">
+<h1>Part 2: Command Options</h1>
+<ul>
+<li>Linux commands often come with options expressed as: <code>&lt;command&gt; --&lt;option[s]&gt;</code></li>
+<li>Options can be expressed as full words or abbreviated characters.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls -lart</code></td>
+<td style="text-align:center">Directory listing with options (long, all, reverse time)</td>
+</tr>
+<tr>
+<td><code>ls -lash</code></td>
+<td style="text-align:center">Directory listing with options (long, all, size in human readable</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-theme="default" style="--theme:default;">
+<h1>Part 2: Getting command help</h1>
+<p>Linux commands come with &quot;man&quot; (manual) pages, which provide a terse description of the meaning and options available to a command. A verbose alternative to man is info.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&lt;command&gt; --help</code></td>
+<td style="text-align:left">Command help summmary (usually)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>man &lt;command&gt;</code></td>
+<td style="text-align:left">Display the manual entry for the command</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>info &lt;command&gt;</code></td>
+<td style="text-align:left">A verbose description of the command</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>whatis &lt;command&gt;</code></td>
+<td style="text-align:left">A terse description of the command</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-theme="default" style="--theme:default;">
+<h1>Part 2: the <code>less</code> command</h1>
+<ul>
+<li>used for conviently viewing large amounts of text</li>
+<li>try <code>less /stornext/HPCScratch/evan/training/Lesson_1.md</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Key stroke</th>
+<th style="text-align:left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>&lt;space bar&gt;</code></td>
+<td style="text-align:left">page down</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>u</code></td>
+<td style="text-align:left">page up</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/&lt;text&gt;</code></td>
+<td style="text-align:left">find forwards</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>?&lt;text&gt;</code></td>
+<td style="text-align:left">find backwards</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>g</code></td>
+<td style="text-align:left">goto to top</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>G</code></td>
+<td style="text-align:left">goto to bottom</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>q</code></td>
+<td style="text-align:left">quit</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>h</code></td>
+<td style="text-align:left">help</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-theme="default" style="--theme:default;">
+<h1>Tab to completion</h1>
+<ul>
+<li>Hit <code>&lt;tab&gt;</code> and the current text will complete if there is a unique completion</li>
+<li>Hit <code>&lt;tab&gt;</code> twice to get a list of possible completions</li>
+<li>Try it: <code>ls -l /stornext/HPCScratch/evan/training/Lesson_1.md</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-theme="default" style="--theme:default;">
+<h1>Part 2: Pipes</h1>
+<p>Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&lt;code&gt;who -u  | less&lt;/code&gt;</td>
+<td style="text-align:center">&quot;Who&quot; shows who is logged on and how long they've been idle.</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;code&gt;ps afux | less&lt;/code&gt;</td>
+<td style="text-align:center">&quot;ps&quot; provides a list of current processes. Check <code>man ps</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-theme="default" style="--theme:default;">
+<h1>Part 2: Redirects</h1>
+<p>To redirect output use the '&gt;' symbol. To redirect input (for example, to feed data to a command) use the '&lt;'. Concatenation is achieved through the use of '&gt;&gt;' symbol.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>w &gt; list.txt</code></td>
+<td style="text-align:center">'w' is a combination of who, uptime and ps -a, redirected</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>w &gt;&gt; list.txt</code></td>
+<td style="text-align:center">Same command, concatenated</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-theme="default" style="--theme:default;">
+<h1>Part 2: Files and Text Editing I</h1>
+<ul>
+<li>Linux filenames can be constructed of any characters except the forward slash, which is for directory navigation. However it is best to avoid punctuation marks, non-printing characters (e.g., spaces). It is <em>much</em> better to use underscores or CamelCase instead of spaces, newlines etc (including in job names).</li>
+<li>Linux is case-sensitive with its filenames (e.g., list.txt, LIST.txt lisT.txT are different).</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-theme="default" style="--theme:default;">
+<h1>Part 2: Navigating the file system</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>cd</code></td>
+<td style="text-align:left">change directory</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>pwd</code></td>
+<td style="text-align:left">present working directory</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Files are located via paths</li>
+<li>Paths can be
+<ul>
+<li>absolute - the start with a '/'</li>
+<li>relative to the working directory - without a leading '/'</li>
+<li><code>.</code> means the current directory</li>
+<li><code>..</code> means up one directory</li>
+</ul>
+</li>
+<li>Demonstrate on the terminal</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-theme="default" style="--theme:default;">
+<h1>Part 2: Files and Text Editing II</h1>
+<ul>
+<li>Files do not usually require a program association suffix, although you may find this convenient (a C compiler like files to have .c in their suffix, for example).</li>
+<li>The type of file can be determined with the <code>file</code> command. The type returned will usually be text, executable binaries, archives, or a catch-all &quot;data&quot; file.
+<ul>
+<li><code>file /stornext/HPCScratch/evan/training/Lesson_1.md</code></li>
+<li><code>file /stornext/HPCScratch/evan/training/random.bam</code></li>
+</ul>
+</li>
+<li>There are three text editors usually available on Linux systems on the command-line. These are <code>nano</code> (1989, as <code>pico</code>) and <code>vim</code> (or <code>vi</code>), and or <code>emacs</code> (both 1976). See <code>https://www.vimgolf.com/</code>
+<ul>
+<li>nano is probably the easiest to start with.</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-theme="default" style="--theme:default;">
+<h1>Part 2: Copying Files to a Local System</h1>
+<p>To get a copy of the files from an external source to your home directory, you will probably want to use <code>wget</code>, or <code>git</code>, or <code>scp</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>wget URL</code></td>
+<td style="text-align:center">Non-interactive download of files over http, https, ftp etc.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>git clone URL</code></td>
+<td style="text-align:center">Clone a repository into a new directory.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-theme="default" style="--theme:default;">
+<h1>Part 2: Copying Files Within a Local System</h1>
+<p>To copy a file from within a system use the <code>cp</code> command. Common options include <code>-r</code> to copy an entire directory</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>cp source destination</code></td>
+<td style="text-align:center">Copy a file from source to destination</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cp -r source destination</code></td>
+<td style="text-align:center">Recursive copy (e.g., a directory)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cp -a source destination</code></td>
+<td style="text-align:center">Recursive copy as archive (permissions, links)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-theme="default" style="--theme:default;">
+<h1>Part 2: Copying</h1>
+<p>Try<br />
+<code>cp list.txt list2.txt</code><br />
+<code>cp -r /stornext/HPCScratch/evan/training .</code></p>
+<h1>Part 2: Copying Files Between Systems</h1>
+<p>To copy files to between systems desktop use SCP (secure copy protocol) or SFTP (secure file transfer protocol), combining the ssh and cp functionality. The <code>cp</code> options can also be used. The source or destination address should also require a remote shell login.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>scp source.address:/path/ destination.address:/path/</code></td>
+<td style="text-align:center">Copies files on a network</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-theme="default" style="--theme:default;">
+<h1>Part 2: Synchronising Files and Directories I</h1>
+<ul>
+<li>The <code>rsync</code> utility provides a fast way to keep two collections of files &quot;in sync&quot; by tracking changes.</li>
+<li>The source or destination address should also require a remote shell login.<br />
+For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles .</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-theme="default" style="--theme:default;">
+<h1>Part 2: Synchronising Files and Directories II</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>rsync source destination</code></td>
+<td style="text-align:center">General rsync command</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>rsync -avze ssh username@remotemachine:/path/to/source .</code></td>
+<td style="text-align:center">With ssh encryption</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-theme="default" style="--theme:default;">
+<h1>Part 2: Synchronising Files and Directories III</h1>
+<ul>
+<li>The <code>rsync -avz</code> command ensures that it is in archive mode (recursive, copies symlinks, preserves permissions), is verbose, and compresses on transmission.</li>
+<li>The <code>--update</code> option restricts the copy only to files that are newer than the destination.</li>
+<li>Note that rsync is &quot;trailing slash sensitive&quot;. A trailing / on a source means &quot;copy the contents of this directory&quot;. Without a trailing slash it means &quot;copy the directory&quot;.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-theme="default" style="--theme:default;">
+<h1>Part 2: Synchronising Files and Directories IV</h1>
+<ul>
+<li>Rsync can be used in a synchronise mode with the --delete flag.  Consider this with the <code>-n</code>, or <code>--dry-run</code> options first!</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">`rsync -avz --update source/ username@remotemachine:/path/to/destination</td>
+<td style="text-align:center">Synchronise, keep older files</td>
+</tr>
+<tr>
+<td style="text-align:left">`rsync -avz --delete source/ username@remotemachine:/path/to/destination</td>
+<td style="text-align:center">Synchronise, absolutely</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-theme="default" style="--theme:default;">
+<h1>Part 2: Creating Directories, Copying and Moving Files</h1>
+<ul>
+<li>Directories can be created with the <code>mkdir</code> command (e.g., <code>mkdir braf</code>).</li>
+<li>Files can be copied with the <code>cp</code> command
+<ul>
+<li><code>cd</code> - change you you home directory</li>
+<li><code>cp /stornext/HPCScratch/evan/training/gattaca.txt ~</code> copy a file to you home directory</li>
+<li><code>cp gattaca.txt gattaca2.txt</code> make another copy of the file</li>
+</ul>
+</li>
+<li>Files can be moved or <em>renamed</em> with the <code>mv</code> command (e.g., <code>mv gattaca2.txt braf</code>)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-theme="default" style="--theme:default;">
+<h1>Part 2: File Differences</h1>
+<ul>
+<li>File differences can be determined by timestamp (e.g., <code>ls -l gattaca.txt braf/gattaca2.txt</code>)</li>
+<li><code>nano gattaca.txt</code> and make a change</li>
+<li>Content differences can be determined by the <code>diff</code> command (e.g., <code>diff gattaca.txt braf/gattaca2.txt</code>)</li>
+<li>For a side-by-side representation use the command <code>sdiff</code> instead.</li>
+<li>The command <code>comm</code> can compare two files, lines by line (e.g., <code>comm gattaca.txt braf/gattaca2.txt</code>).</li>
+<li><code>cmp</code> will simply report if there is a difference</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-theme="default" style="--theme:default;">
+<h1>Part 2: Searches and Wildcards</h1>
+<ul>
+<li>Simple file searches
+<ul>
+<li><code>ls braf/*.txt</code></li>
+<li><code>ls /stornext/HPCScratch/evan/training/*.bam</code></li>
+</ul>
+</li>
+<li>To search for files in an entire direcotry tree use the find command
+<ul>
+<li><code>find . -name \*.txt'</code></li>
+</ul>
+</li>
+<li>To search within files, use the <code>grep</code> command (e.g., <code>grep -i NEV braf/*</code> or <code>grep -l</code>)</li>
+<li>The most common wildcard is <code>*</code>, but there is also <code>?</code> (single character).</li>
+<li>There are also range searches (e.g., <code>[a-z]</code> any character between a and z, inclusive)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-theme="default" style="--theme:default;">
+<h1>Part 2: Deletions</h1>
+<ul>
+<li>Files can be deleted with the <code>rm</code> command (e.g., <code>rm gattaca.txt</code>)</li>
+<li>Empty directories can be deleted with the <code>rmdir</code> command (e.g., <code>rmdir braf</code>)</li>
+<li>Directories, files, subdirectories etc can be delted with <code>rm -rf &lt;&lt;dir&gt;&gt;</code></li>
+<li>BE VERY CAREFUL
+<ul>
+<li>ESPECIALLY WITH WILDCARDS!</li>
+<li>THERE IS NO UNDO OR TRASH!</li>
+<li>THERE MAY BE NO BACKUP!</li>
+</ul>
+</li>
+<li>Consider the difference between <code>rm matlab *</code> to <code>rm matlab*</code>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-theme="default" style="--theme:default;">
+<h1>Part 3: A Dynamic Software Environment</h1>
+<ul>
+<li>Software on Milton Linux systems (and many other HPCs) is provided by the module system</li>
+<li>Manages diverse software requirements in complex multi-user systems.</li>
+<li>Manages dependencies</li>
+<li>Allows multiple versions of the same program</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-theme="default" style="--theme:default;">
+<h1>Part 3: Module Commands I</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>module help</code></td>
+<td style="text-align:center">List of switches, commands and arguments for modules</td>
+</tr>
+<tr>
+<td><code>module avail</code></td>
+<td style="text-align:center">Lists all the modules which are available to be loaded.</td>
+</tr>
+<tr>
+<td><code>module avail &lt;string&gt;</code></td>
+<td style="text-align:center">Lists all the modules starting with <code>&lt;string&gt;</code></td>
+</tr>
+<tr>
+<td><code>module avail 2&gt;&amp;1 | grep &lt;string&gt;</code></td>
+<td style="text-align:center">Lists all the modules containing <code>&lt;string&gt;</code></td>
+</tr>
+<tr>
+<td><code>module display &lt;modulefile&gt;</code></td>
+<td style="text-align:center">Display paths etc for modulefile</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-theme="default" style="--theme:default;">
+<h1>Part 3: Module Commands I</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>module load &lt;modulefile&gt;</code></td>
+<td style="text-align:center">Loads paths etc to user's environment</td>
+</tr>
+<tr>
+<td><code>module unload &lt;modulefile&gt;</code></td>
+<td style="text-align:center">Unloads paths etc from user's environment.</td>
+</tr>
+<tr>
+<td><code>module list</code></td>
+<td style="text-align:center">lists all the modules currently loaded.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-theme="default" style="--theme:default;">
+<h1>Part 3: Portable Batch System I</h1>
+<ul>
+<li>The Portable Batch System (or simply PBS) performs job scheduling by assigning unattended background tasks expressed as batch jobs, among the available resources.</li>
+<li>Originally developed by MRJ Technology Solutions under contract to NASA in the early 1990s. Released as an open-source product as OpenPBS. Forked by Adaptive Computing as TORQUE (Terascale Open-source Resource and QUEue Manager). Many of the original engineering team now part of Altair Engineering who have their own commercial version, PBSPro.</li>
+<li>A batch system typically consists of a resource manager (e.g., TORQUE) and a job scheduler (e.g., Maui, Moab)</li>
+<li>Our batch system is called <strong>Torquelord3</strong> (TL3)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-theme="default" style="--theme:default;">
+<h1>Part 3: Slurm Workload Manager</h1>
+<ul>
+<li>Slurm, used at UoM on Spartan and many sites, was developed as a collaborative effort primarily by Lawrence Livermore National Laboratory, SchedMD, Linux NetworX, Hewlett-Packard, and Groupe Bull as a Free Software resource manager. As of November 2015, TOP500 list of most powerful computers in the world indicates that Slurm is the workload manager on six of the top ten systems. Slurm's design is very modular with about 100 optional plugins.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-theme="default" style="--theme:default;">
+<h1>Part 3: Job Submission Principles</h1>
+<ul>
+<li>The steps for job submission are (a) setup and launch., (b) monitor., and (c) retrieve results and analyse.</li>
+<li>Jobs are launched from a <em>submit</em> node with resource requests and, when the job scheduler decides, run on compute nodes.
+<ul>
+<li>most Milton nodes can act as submit nodes</li>
+<li>c.f. <em>login</em> node</li>
+</ul>
+</li>
+<li>Job scripts are simply resource requests (understood by scheduler), a batch of commands (understood by shell) with output to files.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-theme="default" style="--theme:default;">
+<h1>Part 3: Fair Share</h1>
+<ul>
+<li>A cluster is a shared environment thus a a resource requesting system. Policies ensure that everyone has a &quot;fair share&quot; to the resources (e.g., user processor limits).</li>
+<li>TL3 treats all users and all resources equally.</li>
+<li>No single user can have mode than 75% of total processors</li>
+<li>Heavy users over the previous 7 hours will have lower priority compared to lighter users</li>
+<li>Precise details of fair share are likely to change over time.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-theme="default" style="--theme:default;">
+<h1>Part 3: Backfilling</h1>
+<ul>
+<li>Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout.</li>
+<li>When more resource intensive jobs are running it is possible that gaps ends up in the resource allocation. To fill these gaps a best effort is made for low-resource jobs to slot into these spaces.</li>
+<li>For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-theme="default" style="--theme:default;">
+<p>&lt;img src=&quot;<a href="http://levlafayette.com/files/rabbitjobs.png">http://levlafayette.com/files/rabbitjobs.png</a>&quot; width=&quot;100%&quot; height=&quot;100%&quot; title=&quot;Job submission using rabbits&quot; /&gt;<br />
+From the IBM 'Red Book' on Job Submission.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-theme="default" style="--theme:default;">
+<h1>Part 3: What to run and what not to run on unix500</h1>
+<ul>
+<li>unix500 is a shared resource</li>
+<li>Primarily for
+<ul>
+<li>test and development</li>
+<li>script and file preparation</li>
+</ul>
+</li>
+<li>Some heavy processing is OK
+<ul>
+<li>8 CPUs</li>
+<li>24 GB memory</li>
+<li>24 hours elapsed time</li>
+</ul>
+</li>
+<li>The batch system will be more stable and more performant</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-theme="default" style="--theme:default;">
+<h1>Part 3: Queues</h1>
+<ul>
+<li>Jobs are submitted to queues
+<ul>
+<li>different resource types, e.g. GPU nodes</li>
+<li>different service levels, usually coupled to resource constraints</li>
+</ul>
+</li>
+<li>Milton queues are:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Queue</th>
+<th style="text-align:center">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>submit</td>
+<td style="text-align:center">Standard nodes, suitable for most jobs. Default if not queue is specified</td>
+</tr>
+<tr>
+<td>submit_2xp100</td>
+<td style="text-align:center">Nodes with GPUs</td>
+</tr>
+<tr>
+<td>skylake</td>
+<td style="text-align:center">Nodes with Intel Skylake CPUs</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-theme="default" style="--theme:default;">
+<h1>Part 3: Basic steps</h1>
+<ul>
+<li>Develop a shell script, a text file of commands, to perform the work
+<ul>
+<li>load modules and other enviromental setup</li>
+<li>run commands</li>
+</ul>
+</li>
+<li>Submit job with appropriate resources</li>
+<li>Monitor your jobs</li>
+<li>Check job output and expected output files.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-theme="default" style="--theme:default;">
+<h1>Part 3: A script</h1>
+<pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">cd</span> &lt;my-work-dir&gt;
+module load myapp
+myapp data
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-theme="default" style="--theme:default;">
+<h1>Part 3: Resources</h1>
+<ul>
+<li>The system needs to know what resources your jobs needs so it can schedule your job into an appropriate node and reserves the resources you have requested</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodes</td>
+<td style="text-align:center">Number of nodes</td>
+</tr>
+<tr>
+<td>ppn</td>
+<td style="text-align:center">processors (i.e. CPUs) per node</td>
+</tr>
+<tr>
+<td>mem</td>
+<td style="text-align:center">amount of memory</td>
+</tr>
+<tr>
+<td>walltime</td>
+<td style="text-align:center">maximum elapsed time</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-theme="default" style="--theme:default;">
+<h1>Part 3: Submit a job - command line resources</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qsub -l nodes=<span class="hljs-number">1</span>:ppn=<span class="hljs-number">2</span>,mem=<span class="hljs-number">8</span>gb,walltime=<span class="hljs-number">01</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> &lt;script&gt;
+</span></span></foreignObject></svg></code></pre>
+<p><strong>Note:</strong> commas and colons</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-theme="default" style="--theme:default;">
+<h1>Part 3: Submit a job - script resources</h1>
+<pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment">#PBS -l nodes=1:ppn=2,mem=8gb,walltime=01:00:00 </span>
+<span class="hljs-built_in">cd</span> &lt;my-work-dir&gt;
+module load myapp
+myapp data
+</span></span></foreignObject></svg></code></pre>
+<p>or</p>
+<pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment">#PBS -l nodes=1:ppn=2</span>
+<span class="hljs-comment">#PBS -l mem=8gb</span>
+<span class="hljs-comment">#PBS -l walltime=01:00:00 </span>
+<span class="hljs-built_in">cd</span> &lt;my-work-dir&gt;
+module load myapp
+myapp data
+</span></span></foreignObject></svg></code></pre>
+<p>then</p>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qsub <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+</span></span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-theme="default" style="--theme:default;">
+<h1>Part 3: After you submit your job</h1>
+<ul>
+<li>Your job is placed in a queue and job id is assigned</li>
+<li>Your job will have a name, which will be the script name by default</li>
+<li>It may take while before your job runs if the system is busy</li>
+<li>The job will start in your home directory not the directory where you submitted you job!</li>
+<li>Job output will go to the directory where the job was submitted.</li>
+<li>Two output files are created by default
+<ul>
+<li><code>&lt;jobname&gt;.o&lt;jobid&gt;</code> which contains program <code>stdout</code></li>
+<li><code>&lt;jobname&gt;.e&lt;jobid&gt;</code> which contains program <code>stderr</code></li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-theme="default" style="--theme:default;">
+<h1>Part 3: Monitoring your job</h1>
+<p>To see all the jobs in the queue</p>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-attribute">qstat</span>
+</span></span></foreignObject></svg></code></pre>
+<p>To see just your, somebody else's jobs</p>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qstat -u <span class="hljs-tag">&lt;<span class="hljs-name">userid</span>&gt;</span>
+</span></span></foreignObject></svg></code></pre>
+<p>Interpreting job status</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q</td>
+<td style="text-align:center">Queued</td>
+</tr>
+<tr>
+<td>R</td>
+<td style="text-align:center">Running</td>
+</tr>
+<tr>
+<td>C</td>
+<td style="text-align:center">Complete</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-theme="default" style="--theme:default;">
+<h1>Part 2: Killing jobs</h1>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qdel <span class="hljs-tag">&lt;<span class="hljs-name">jobid</span>&gt;</span>
+</span></span></foreignObject></svg></code></pre>
+<p>or</p>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qdel <span class="hljs-keyword">all</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-theme="default" style="--theme:default;">
+<h1>Part 4: Interactive Jobs</h1>
+<ul>
+<li>An interactive job, based on the resource requests made on the command line, puts the user on to a compute node. This is typically done if they user wants to run a  large script (and shouldn't do it on the login node), or wants to test or debug a job. The  following command would launch one node with two processors for ten minutes.</li>
+</ul>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qsub -I -l nodes=<span class="hljs-number">1</span>:ppn=<span class="hljs-number">2</span>,mem=<span class="hljs-number">1</span>gb,walltime=<span class="hljs-number">00</span>:<span class="hljs-number">10</span>:<span class="hljs-number">00</span>
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-theme="default" style="--theme:default;">
+<h1>Part 4: Worked example</h1>
+<pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>mkdir -p ~/braf
+<span class="hljs-built_in">cd</span> ~/braf
+cp /stornext/HPCScratch/evan/training/S1_R* .
+cp /stornext/HPCScratch/evan/training/align.sh .
+ls -l
+nano align.sh
+qsub -l nodes=1:ppn=1,mem=4gb,walltime=01:00:00 align.sh 
+qstat -u &lt;userid&gt;
+ls align.sh.*
+cat align.sh.*
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-theme="default" style="--theme:default;">
+<h1>Part 4: Exercise</h1>
+<p>Rerun the same job with 6 CPUs</p>
+<ol>
+<li>Work out how to tell bowtie2 to use more CPUs
+<ol>
+<li><code>module load bowtie2</code></li>
+<li><code>bowtie2 --help</code></li>
+</ol>
+</li>
+<li>Modify the script</li>
+<li>Submit with the appropriate invocation of <code>qsub</code></li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-theme="default" style="--theme:default;">
+<h1>Part 5: PBS commands: qsub</h1>
+<ul>
+<li><code>man qsub</code></li>
+<li>google (but there are variants)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-l</code></td>
+<td>resources (required)</td>
+</tr>
+<tr>
+<td><code>-q &lt;queue&gt;</code></td>
+<td>queue</td>
+</tr>
+<tr>
+<td><code>-N &lt;name&gt;</code></td>
+<td>jobname</td>
+</tr>
+<tr>
+<td><code>-m &lt;options&gt;</code></td>
+<td>email options</td>
+</tr>
+<tr>
+<td><code>-M &lt;email&gt;</code></td>
+<td>email addresses</td>
+</tr>
+<tr>
+<td><code>-j eo</code></td>
+<td>combine output streams</td>
+</tr>
+<tr>
+<td><code>-e &lt;path&gt;</code>, <code>-o &lt;path&gt;</code></td>
+<td>locations for output streams</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-theme="default" style="--theme:default;">
+<h1>Part 5: PBS environment variables</h1>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PBS_O_HOST</code></td>
+<td>execution host</td>
+</tr>
+<tr>
+<td><code>PBS_O_WORKDIR</code></td>
+<td>directory where <code>qsub</code> ran</td>
+</tr>
+<tr>
+<td><code>PBS_JOBID</code></td>
+<td>jobid</td>
+</tr>
+<tr>
+<td><code>PBS_JOBNAME</code></td>
+<td>jobname</td>
+</tr>
+</tbody>
+</table>
+<p>e.g. <code>cd $PBS_O_WORKDIR</code></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-theme="default" style="--theme:default;">
+<h1>Part 5: PBS commands: qstat</h1>
+<ul>
+<li><code>man qstat</code></li>
+<li>google (but there are variants)</li>
+<li>most <code>qstat</code> commands can be limited to a jobid or user</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-u &lt;userid&gt;</code></td>
+<td>only for that user</td>
+</tr>
+<tr>
+<td><code>-n</code>, <code>-n1</code></td>
+<td>show nodes</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>full report</td>
+</tr>
+<tr>
+<td><code>-q</code>, <code>-Q</code></td>
+<td>show queues</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>alternative format</td>
+</tr>
+<tr>
+<td><code>-x</code></td>
+<td>XML format</td>
+</tr>
+<tr>
+<td><code>-e</code>, <code>-o</code></td>
+<td>locations for output streams</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-theme="default" style="--theme:default;">
+<h1>Slide Respository</h1>
+<ul>
+<li>These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.</li>
+<li>A copy of these slides and sample code is available at: <code>https://github.com/WEHI-ResearchComputing/MiltonIntro</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-theme="default" style="--theme:default;">
+<h2>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/hypnotoad.png">https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/hypnotoad.png</a>&quot; width=&quot;150%&quot; height=&quot;150%&quot; /&gt;</h2>
+</section>
+</foreignObject></svg></article><script>!function(){"use strict";var e,t,o=(function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var o=function(e,t,o){this.name=e,this.version=t,this.os=o};t.BrowserInfo=o;var n=function(e){this.version=e,this.name="node",this.os=process.platform};t.NodeInfo=n;var r=function(){this.bot=!0,this.name="bot",this.version=null,this.os=null};t.BotInfo=r;var i=3,s=[["aol",/AOLShield\/([0-9\._]+)/],["edge",/Edge\/([0-9\._]+)/],["yandexbrowser",/YaBrowser\/([0-9\._]+)/],["vivaldi",/Vivaldi\/([0-9\.]+)/],["kakaotalk",/KAKAOTALK\s([0-9\.]+)/],["samsung",/SamsungBrowser\/([0-9\.]+)/],["silk",/\bSilk\/([0-9._-]+)\b/],["chrome",/(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/],["phantomjs",/PhantomJS\/([0-9\.]+)(:?\s|$)/],["crios",/CriOS\/([0-9\.]+)(:?\s|$)/],["firefox",/Firefox\/([0-9\.]+)(?:\s|$)/],["fxios",/FxiOS\/([0-9\.]+)/],["opera-mini",/Opera Mini.*Version\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)(?:\s|$)/],["opera",/OPR\/([0-9\.]+)(:?\s|$)$/],["ie",/Trident\/7\.0.*rv\:([0-9\.]+).*\).*Gecko$/],["ie",/MSIE\s([0-9\.]+);.*Trident\/[4-7].0/],["ie",/MSIE\s(7\.0)/],["bb10",/BB10;\sTouch.*Version\/([0-9\.]+)/],["android",/Android\s([0-9\.]+)/],["ios",/Version\/([0-9\._]+).*Mobile.*Safari.*/],["safari",/Version\/([0-9\._]+).*Safari/],["facebook",/FBAV\/([0-9\.]+)/],["instagram",/Instagram\s([0-9\.]+)/],["ios-webview",/AppleWebKit\/([0-9\.]+).*Mobile/],["searchbot",/alexa|bot|crawl(er|ing)|facebookexternalhit|feedburner|google web preview|nagios|postrank|pingdom|slurp|spider|yahoo!|yandex/]],a=[["iOS",/iP(hone|od|ad)/],["Android OS",/Android/],["BlackBerry OS",/BlackBerry|BB10/],["Windows Mobile",/IEMobile/],["Amazon OS",/Kindle/],["Windows 3.11",/Win16/],["Windows 95",/(Windows 95)|(Win95)|(Windows_95)/],["Windows 98",/(Windows 98)|(Win98)/],["Windows 2000",/(Windows NT 5.0)|(Windows 2000)/],["Windows XP",/(Windows NT 5.1)|(Windows XP)/],["Windows Server 2003",/(Windows NT 5.2)/],["Windows Vista",/(Windows NT 6.0)/],["Windows 7",/(Windows NT 6.1)/],["Windows 8",/(Windows NT 6.2)/],["Windows 8.1",/(Windows NT 6.3)/],["Windows 10",/(Windows NT 10.0)/],["Windows ME",/Windows ME/],["Open BSD",/OpenBSD/],["Sun OS",/SunOS/],["Chrome OS",/CrOS/],["Linux",/(Linux)|(X11)/],["Mac OS",/(Mac_PowerPC)|(Macintosh)/],["QNX",/QNX/],["BeOS",/BeOS/],["OS/2",/OS\/2/],["Search Bot",/(nuhk)|(Googlebot)|(Yammybot)|(Openbot)|(Slurp)|(MSNBot)|(Ask Jeeves\/Teoma)|(ia_archiver)/]];function l(e){var t=""!==e&&s.reduce(function(t,o){var n=o[0],r=o[1];if(t)return t;var i=r.exec(e);return!!i&&[n,i]},!1);if(!t)return null;var n=t[0],a=t[1];if("searchbot"===n)return new r;var l=a[1]&&a[1].split(/[._]/).slice(0,3);return l?l.length<i&&(l=l.concat(function(e){for(var t=[],o=0;o<e;o++)t.push("0");return t}(i-l.length))):l=[],new o(n,l.join("."),d(e))}function d(e){for(var t=0,o=a.length;t<o;t++){var n=a[t],r=n[0];if(n[1].test(e))return r}return null}function c(){return"undefined"!=typeof process&&process.version?new n(process.version.slice(1)):null}t.detect=function(){return"undefined"!=typeof navigator?l(navigator.userAgent):c()},t.parseUserAgent=l,t.detectOS=d,t.getNodeVersion=c}(e={exports:{}},e.exports),e.exports);(t=o)&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")&&t.default,o.BrowserInfo,o.NodeInfo,o.BotInfo;var n=o.detect;let r;o.parseUserAgent,o.detectOS,o.getNodeVersion;const i=["android","bb10","crios","facebook","fxios","instagram","ios-webview","ios","phantomjs","safari"];function s(e){Array.from(document.getElementsByTagName("svg"),t=>{if(t.hasAttribute("data-marpit-svg")){const{clientHeight:o,clientWidth:n}=t;t.style.transform||(t.style.transform="translateZ(0)");const r=e||t.currentScale||1,i=t.viewBox.baseVal.width/r,s=t.viewBox.baseVal.height/r,a=Math.min(o/s,n/i);Array.from(t.querySelectorAll(":scope > foreignObject"),e=>{const t=e.x.baseVal.value,r=e.y.baseVal.value;Array.from(e.querySelectorAll(":scope > section"),e=>{e.style.transformOrigin||(e.style.transformOrigin="0 0");const l=(n-a*i)/2-t,d=(o-a*s)/2-r;e.style.transform=`translate3d(${l}px,${d}px,0) scale(${a}) translate(${t}px,${r}px)`})})}})}const a="data-marp-fitting",l="data-marp-fitting-code",d="data-marp-fitting-math",c=(e,t,o)=>{if(e.getAttribute(t)!==o)return e.setAttribute(t,o),!0};!function(e=!0){const t=()=>{for(const e of function(){if(!r){r=[];const{name:e}=n()||{};i.includes(e)&&r.push(s)}return r}())e();Array.from(document.querySelectorAll(`svg[${a}="svg"]`),e=>{const t=e.firstChild,o=t.firstChild,{scrollWidth:n,scrollHeight:r}=o;let i,s=1;if(e.hasAttribute(l)&&(i=e.parentElement.parentElement),e.hasAttribute(d)&&(i=e.parentElement),i){const e=getComputedStyle(i),t=Math.ceil(i.clientWidth-parseFloat(e.paddingLeft)-parseFloat(e.paddingRight));t&&(s=t)}const a=Math.max(n,s),u=Math.max(r,1),f=`0 0 ${a} ${u}`;c(t,"width",`${a}`),c(t,"height",`${u}`),c(e,"preserveAspectRatio",getComputedStyle(e).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),c(e,"viewBox",f)&&e.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(t)};t()}()}();
+</script><script>!function(){"use strict";var e={from:function(e,n){var t=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),r=[].filter.call("string"==typeof e.slides?t.querySelectorAll(e.slides):e.slides||t.children,function(e){return"SCRIPT"!==e.nodeName}),i=r[0],l={},o=function(e,n){r[e]&&(a("deactivate",u(i,n)),i=r[e],a("activate",u(i,n)))},s=function(e,n){var t=r.indexOf(i)+e;a(e>0?"next":"prev",u(i,n))&&o(t,n)},c=function(e,n){l[e]=(l[e]||[]).filter(function(e){return e!==n})},a=function(e,n){return(l[e]||[]).reduce(function(e,t){return e&&!1!==t(n)},!0)},u=function(e,n){return(n=n||{}).index=r.indexOf(e),n.slide=e,n},d={on:function(e,n){return(l[e]||(l[e]=[])).push(n),c.bind(null,e,n)},off:c,fire:a,slide:function(e,n){if(!arguments.length)return r.indexOf(i);a("slide",u(r[e],n))&&o(e,n)},next:s.bind(null,1),prev:s.bind(null,-1),parent:t,slides:r};return(n||[]).forEach(function(e){e(d)}),o(0),d}},n=function(){return function(e){e.slides.forEach(function(e){e.addEventListener("keydown",function(e){(/INPUT|TEXTAREA|SELECT/.test(e.target.nodeName)||"true"===e.target.contentEditable)&&e.stopPropagation()})})}};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.map(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",n=>{e.slides.map(e=>e.classList.remove("bespoke-marp-active")),n.slide.classList.add("bespoke-marp-active")})}function r(e=2e3){return n=>{let t;function r(){t&&clearTimeout(t),t=setTimeout(()=>{n.parent.classList.add("bespoke-marp-inactive")},e),n.parent.classList.remove("bespoke-marp-inactive")}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}var i,l=(function(e){var n,t,r,i,l,o;n="undefined"!=typeof window&&void 0!==window.document?window.document:{},t=e.exports,r="undefined"!=typeof Element&&"ALLOW_KEYBOARD_INPUT"in Element,i=function(){for(var e,t=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,i=t.length,l={};r<i;r++)if((e=t[r])&&e[1]in n){for(r=0;r<e.length;r++)l[t[0][r]]=e[r];return l}return!1}(),l={change:i.fullscreenchange,error:i.fullscreenerror},o={request:function(e){return new Promise(function(t){var l=i.requestFullscreen,o=function(){this.off("change",o),t()}.bind(this);e=e||n.documentElement,/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)?e[l]():e[l](r?Element.ALLOW_KEYBOARD_INPUT:{}),this.on("change",o)}.bind(this))},exit:function(){return new Promise(function(e){if(this.isFullscreen){var t=function(){this.off("change",t),e()}.bind(this);n[i.exitFullscreen](),this.on("change",t)}else e()}.bind(this))},toggle:function(e){return this.isFullscreen?this.exit():this.request(e)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,t){var r=l[e];r&&n.addEventListener(r,t,!1)},off:function(e,t){var r=l[e];r&&n.removeEventListener(r,t,!1)},raw:i},i?(Object.defineProperties(o,{isFullscreen:{get:function(){return Boolean(n[i.fullscreenElement])}},element:{enumerable:!0,get:function(){return n[i.fullscreenElement]}},enabled:{enumerable:!0,get:function(){return Boolean(n[i.fullscreenEnabled])}}}),t?e.exports=o:window.screenfull=o):t?e.exports=!1:window.screenfull=!1}(i={exports:{}},i.exports),i.exports);function o(e){e.fullscreen=(()=>l.toggle(document.body)),document.addEventListener("keydown",n=>{70!==n.which&&122!==n.which||n.altKey||n.ctrlKey||n.metaKey||!l.enabled||(e.fullscreen(),n.preventDefault())})}function s(e={}){const n=Object.assign({history:!0},e);return e=>{function t(){const n=parseInt(window.location.hash.slice(1),10);Number.isNaN(n)||function(n){const t=Math.max(0,Math.min(n,e.slides.length-1));t!==e.slide()&&e.slide(t)}(n-1)}setTimeout(()=>{t(),e.on("activate",e=>{n.history?window.location.hash=e.index+1:window.location.replace(`#${e.index+1}`)}),window.addEventListener("hashchange",t)},0)}}var c,a=function(e){return function(n){var t="vertical"!==e;document.addEventListener("keydown",function(e){(34==e.which||32==e.which&&!e.shiftKey||t&&39==e.which||!t&&40==e.which)&&n.next(),(33==e.which||32==e.which&&e.shiftKey||t&&37==e.which||!t&&38==e.which)&&n.prev()})}};function u(e={}){const n=Object.assign({interval:200},e);return e=>{a()(e),document.addEventListener("keydown",n=>{35===n.which&&e.slide(e.slides.length-1),36===n.which&&e.slide(0),38===n.which&&e.prev(),40===n.which&&e.next()});let t,r,i=0;e.parent.addEventListener("wheel",l=>{let o=!1;const s=(e,n)=>{e&&(o=o||function(e,n){return function(e,n){const t=n===c.X?"Width":"Height";return e[`client${t}`]<e[`scroll${t}`]}(e,n)&&function(e,n){const{overflow:t}=e,r=e[`overflow${n}`];return"auto"===t||"scroll"===t||"auto"===r||"scroll"===r}(getComputedStyle(e),n)}(e,n)),e&&e.parentElement&&s(e.parentElement,n)};if(0!==l.deltaX&&s(l.target,c.X),0!==l.deltaY&&s(l.target,c.Y),o)return;l.preventDefault(),r&&clearTimeout(r),r=setTimeout(()=>{t=0},n.interval);const a=Date.now()-i<n.interval,u=Math.sqrt(Math.pow(l.deltaX,2)+Math.pow(l.deltaY,2)),d=u<=t;if(t=u,a||d)return;let f;(l.deltaX>0||l.deltaY>0)&&(f="next"),(l.deltaX<0||l.deltaY<0)&&(f="prev"),f&&(e[f](),i=Date.now())})}}function d(e=".bespoke-marp-osc"){const n=document.querySelector(e);if(!n)return()=>{};const t=(e,t)=>{n.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(t)};return l.enabled||t("fullscreen",e=>e.style.display="none"),e=>{n.addEventListener("click",n=>{if(n.target instanceof HTMLElement)switch(n.target.dataset.bespokeMarpOsc){case"next":e.next();break;case"prev":e.prev();break;case"fullscreen":"function"==typeof e.fullscreen&&l.enabled&&e.fullscreen()}}),e.parent.appendChild(n),e.on("activate",({index:n})=>{t("page",t=>t.textContent=`Page ${n+1} of ${e.slides.length}`),t("prev",e=>e.disabled=0===n),t("next",t=>t.disabled=n===e.slides.length-1)}),l.onchange(()=>t("fullscreen",e=>e.classList.toggle("exit",l.isFullscreen)))}}!function(e){e.X="X",e.Y="Y"}(c||(c={}));const f=".bespoke-progress-bar";function h(e){e.on("activate",n=>{document.querySelectorAll(f).forEach(t=>{t.style.flexBasis=`${100*n.index/(e.slides.length-1)}%`})})}function p(e={}){const n=Object.assign({slope:Math.tan(-35*Math.PI/180),swipeThreshold:30},e);return e=>{let t;const r=e.parent,i=e=>{const n=r.getBoundingClientRect();return{x:e.pageX-(n.left+n.right)/2,y:e.pageY-(n.top+n.bottom)/2}};r.addEventListener("touchstart",e=>{t=1===e.touches.length?i(e.touches[0]):void 0}),r.addEventListener("touchmove",e=>{if(t)if(1===e.touches.length){e.preventDefault();const n=i(e.touches[0]),r=n.x-t.x,l=n.y-t.y;t.delta=Math.sqrt(Math.pow(Math.abs(r),2)+Math.pow(Math.abs(l),2)),t.radian=Math.atan2(r,l)}else t=void 0}),r.addEventListener("touchend",r=>{if(t){if(t.delta&&t.delta>=n.swipeThreshold){let i=t.radian-n.slope;i=(i+Math.PI)%(2*Math.PI)-Math.PI,e[i<0?"next":"prev"](),r.stopPropagation()}t=void 0}})}}e.from(document.getElementById("presentation"),[n(),t,r(),s({history:!1}),u(),o,h,p(),d()])}();
+</script></body></html>
