@@ -96,6 +96,7 @@ Research Computing</p>
 <li>Part 3: Learning about software modules and the batch job submission system.</li>
 <li>Part 4: Submitting test jobs.</li>
 <li>Part 5: PBS Command Summaries</li>
+<li>Part 6: WEHI Filesystems</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-theme="default" style="--theme:default;">
@@ -239,7 +240,7 @@ Research Computing</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-theme="default" style="--theme:default;">
 <h1>Part 1: Virtualization</h1>
-<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/virtualization.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/virtualization.png</a>&quot; /&gt;</p>
+<p><img src="../Images/virtualization.png" alt="Virtualization" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-theme="default" style="--theme:default;">
 <h1>Part 1: Milton Hardware</h1>
@@ -262,7 +263,7 @@ Research Computing</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-theme="default" style="--theme:default;">
 <h1>Part 1: Milton overview</h1>
-<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/Milton_Overview.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/Milton_Overview.png</a>&quot; /&gt;</p>
+<p><img src="../Images/Milton_Overview.png" alt="Milton overview" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-theme="default" style="--theme:default;">
 <h1>Part 1: Logging In</h1>
@@ -281,11 +282,11 @@ Research Computing</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-theme="default" style="--theme:default;">
 <h1>Part 1: Logging in from Windows</h1>
-<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-1.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-1.png</a>&quot; /&gt;</p>
+<p><img src="../Images/putty-1.png" alt="putty" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-theme="default" style="--theme:default;">
 <h1>Part 1: Logging in from Windows</h1>
-<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-2.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-2.png</a>&quot; /&gt;</p>
+<p><img src="../Images/putty-2.png" alt="putty" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-theme="default" style="--theme:default;">
 <h1>Part 1: SSH Keys, Config, Data Transfers</h1>
@@ -296,7 +297,7 @@ Research Computing</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-theme="default" style="--theme:default;">
 <h1>Part 2: It's a Linux Command Line World</h1>
-<p>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/gnulinux.png">https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/gnulinux.png</a>&quot; align=&quot;center&quot; height=&quot;25%&quot; width=&quot;25%&quot; vspace=&quot;5&quot; hspace=&quot;5&quot; /&gt;</p>
+<p><img src="../Images/gnulinux.png" alt="GNU" /></p>
 <ul>
 <li>The command line interface (CLI) provides a great deal more power and is very resource efficient.</li>
 <li>Linux scales and does so with stability and efficiency.</li>
@@ -860,7 +861,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-theme="default" style="--theme:default;">
-<p>&lt;img src=&quot;<a href="http://levlafayette.com/files/rabbitjobs.png">http://levlafayette.com/files/rabbitjobs.png</a>&quot; width=&quot;100%&quot; height=&quot;100%&quot; title=&quot;Job submission using rabbits&quot; /&gt;<br />
+<p><img src="../Images/rabbitjobs.png" alt="rabbits" /><br />
 From the IBM 'Red Book' on Job Submission.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-theme="default" style="--theme:default;">
@@ -1212,14 +1213,74 @@ cat align.sh.*
 </table>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-theme="default" style="--theme:default;">
+<h1>Part 6: WEHI filesystems</h1>
+<h2>Home areas</h2>
+<p>What does &quot;home area&quot; mean?</p>
+<ul>
+<li>Linux:
+<ul>
+<li>The directory you start in when you login</li>
+<li>location of special files</li>
+<li><code>$HOME</code> and <code>~</code></li>
+<li>These will be different on different systems</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-theme="default" style="--theme:default;">
+<h1>Part 6: WEHI filesystems</h1>
+<h2>Home areas</h2>
+<ul>
+<li>Mac:
+<ul>
+<li>The folder named with your userid on FS_ALL</li>
+<li>You need to manually &quot;connect to server ...&quot; from the finder</li>
+</ul>
+</li>
+<li>Windows
+<ul>
+<li>W: drive should be mapped automatically</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-theme="default" style="--theme:default;">
+<h1>Part 6: WEHI Home areas</h1>
+<ul>
+<li>In most milton nodes, including unix500, the home area is <code>/home/&lt;userid&gt;</code>
+<ul>
+<li>also visible as <code>/stornext/HPCScratch/home/&lt;userid&gt;</code></li>
+</ul>
+</li>
+<li>Desktop or main home area is <code>/wehisan/home/allstaff/&lt;s&gt;/&lt;surname.i&gt;/</code></li>
+<li>This is also the home area for the old unix3xx and unix4xx home areas</li>
+<li>To copy data from your desktop
+<ul>
+<li>copy to your home with the finder/explorer</li>
+<li>copy from &quot;main&quot; home area to your &quot;milton&quot; home area</li>
+</ul>
+</li>
+<li>Milton home areas are on HPCScratch and are <strong>not</strong> backed up</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-theme="default" style="--theme:default;">
+<h1>Part 6: WEHI lab areas</h1>
+<ul>
+<li>All data are owned by the lab, then the division then the institute</li>
+<li>Most labs will have a lab area for their data.</li>
+<li>All valuable data should on a lab area - these are backed up</li>
+<li>Use the Milton home area for temporary data</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-theme="default" style="--theme:default;">
 <h1>Slide Respository</h1>
 <ul>
 <li>These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.</li>
 <li>A copy of these slides and sample code is available at: <code>https://github.com/WEHI-ResearchComputing/MiltonIntro</code></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-theme="default" style="--theme:default;">
-<h2>&lt;img src=&quot;<a href="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/hypnotoad.png">https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/hypnotoad.png</a>&quot; width=&quot;150%&quot; height=&quot;150%&quot; /&gt;</h2>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-theme="default" style="--theme:default;">
+<h2><img src="../Images/hypnotoad.png" alt="toad" /></h2>
 </section>
 </foreignObject></svg></article><script>!function(){"use strict";var e,t,o=(function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var o=function(e,t,o){this.name=e,this.version=t,this.os=o};t.BrowserInfo=o;var n=function(e){this.version=e,this.name="node",this.os=process.platform};t.NodeInfo=n;var r=function(){this.bot=!0,this.name="bot",this.version=null,this.os=null};t.BotInfo=r;var i=3,s=[["aol",/AOLShield\/([0-9\._]+)/],["edge",/Edge\/([0-9\._]+)/],["yandexbrowser",/YaBrowser\/([0-9\._]+)/],["vivaldi",/Vivaldi\/([0-9\.]+)/],["kakaotalk",/KAKAOTALK\s([0-9\.]+)/],["samsung",/SamsungBrowser\/([0-9\.]+)/],["silk",/\bSilk\/([0-9._-]+)\b/],["chrome",/(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/],["phantomjs",/PhantomJS\/([0-9\.]+)(:?\s|$)/],["crios",/CriOS\/([0-9\.]+)(:?\s|$)/],["firefox",/Firefox\/([0-9\.]+)(?:\s|$)/],["fxios",/FxiOS\/([0-9\.]+)/],["opera-mini",/Opera Mini.*Version\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)(?:\s|$)/],["opera",/OPR\/([0-9\.]+)(:?\s|$)$/],["ie",/Trident\/7\.0.*rv\:([0-9\.]+).*\).*Gecko$/],["ie",/MSIE\s([0-9\.]+);.*Trident\/[4-7].0/],["ie",/MSIE\s(7\.0)/],["bb10",/BB10;\sTouch.*Version\/([0-9\.]+)/],["android",/Android\s([0-9\.]+)/],["ios",/Version\/([0-9\._]+).*Mobile.*Safari.*/],["safari",/Version\/([0-9\._]+).*Safari/],["facebook",/FBAV\/([0-9\.]+)/],["instagram",/Instagram\s([0-9\.]+)/],["ios-webview",/AppleWebKit\/([0-9\.]+).*Mobile/],["searchbot",/alexa|bot|crawl(er|ing)|facebookexternalhit|feedburner|google web preview|nagios|postrank|pingdom|slurp|spider|yahoo!|yandex/]],a=[["iOS",/iP(hone|od|ad)/],["Android OS",/Android/],["BlackBerry OS",/BlackBerry|BB10/],["Windows Mobile",/IEMobile/],["Amazon OS",/Kindle/],["Windows 3.11",/Win16/],["Windows 95",/(Windows 95)|(Win95)|(Windows_95)/],["Windows 98",/(Windows 98)|(Win98)/],["Windows 2000",/(Windows NT 5.0)|(Windows 2000)/],["Windows XP",/(Windows NT 5.1)|(Windows XP)/],["Windows Server 2003",/(Windows NT 5.2)/],["Windows Vista",/(Windows NT 6.0)/],["Windows 7",/(Windows NT 6.1)/],["Windows 8",/(Windows NT 6.2)/],["Windows 8.1",/(Windows NT 6.3)/],["Windows 10",/(Windows NT 10.0)/],["Windows ME",/Windows ME/],["Open BSD",/OpenBSD/],["Sun OS",/SunOS/],["Chrome OS",/CrOS/],["Linux",/(Linux)|(X11)/],["Mac OS",/(Mac_PowerPC)|(Macintosh)/],["QNX",/QNX/],["BeOS",/BeOS/],["OS/2",/OS\/2/],["Search Bot",/(nuhk)|(Googlebot)|(Yammybot)|(Openbot)|(Slurp)|(MSNBot)|(Ask Jeeves\/Teoma)|(ia_archiver)/]];function l(e){var t=""!==e&&s.reduce(function(t,o){var n=o[0],r=o[1];if(t)return t;var i=r.exec(e);return!!i&&[n,i]},!1);if(!t)return null;var n=t[0],a=t[1];if("searchbot"===n)return new r;var l=a[1]&&a[1].split(/[._]/).slice(0,3);return l?l.length<i&&(l=l.concat(function(e){for(var t=[],o=0;o<e;o++)t.push("0");return t}(i-l.length))):l=[],new o(n,l.join("."),d(e))}function d(e){for(var t=0,o=a.length;t<o;t++){var n=a[t],r=n[0];if(n[1].test(e))return r}return null}function c(){return"undefined"!=typeof process&&process.version?new n(process.version.slice(1)):null}t.detect=function(){return"undefined"!=typeof navigator?l(navigator.userAgent):c()},t.parseUserAgent=l,t.detectOS=d,t.getNodeVersion=c}(e={exports:{}},e.exports),e.exports);(t=o)&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")&&t.default,o.BrowserInfo,o.NodeInfo,o.BotInfo;var n=o.detect;let r;o.parseUserAgent,o.detectOS,o.getNodeVersion;const i=["android","bb10","crios","facebook","fxios","instagram","ios-webview","ios","phantomjs","safari"];function s(e){Array.from(document.getElementsByTagName("svg"),t=>{if(t.hasAttribute("data-marpit-svg")){const{clientHeight:o,clientWidth:n}=t;t.style.transform||(t.style.transform="translateZ(0)");const r=e||t.currentScale||1,i=t.viewBox.baseVal.width/r,s=t.viewBox.baseVal.height/r,a=Math.min(o/s,n/i);Array.from(t.querySelectorAll(":scope > foreignObject"),e=>{const t=e.x.baseVal.value,r=e.y.baseVal.value;Array.from(e.querySelectorAll(":scope > section"),e=>{e.style.transformOrigin||(e.style.transformOrigin="0 0");const l=(n-a*i)/2-t,d=(o-a*s)/2-r;e.style.transform=`translate3d(${l}px,${d}px,0) scale(${a}) translate(${t}px,${r}px)`})})}})}const a="data-marp-fitting",l="data-marp-fitting-code",d="data-marp-fitting-math",c=(e,t,o)=>{if(e.getAttribute(t)!==o)return e.setAttribute(t,o),!0};!function(e=!0){const t=()=>{for(const e of function(){if(!r){r=[];const{name:e}=n()||{};i.includes(e)&&r.push(s)}return r}())e();Array.from(document.querySelectorAll(`svg[${a}="svg"]`),e=>{const t=e.firstChild,o=t.firstChild,{scrollWidth:n,scrollHeight:r}=o;let i,s=1;if(e.hasAttribute(l)&&(i=e.parentElement.parentElement),e.hasAttribute(d)&&(i=e.parentElement),i){const e=getComputedStyle(i),t=Math.ceil(i.clientWidth-parseFloat(e.paddingLeft)-parseFloat(e.paddingRight));t&&(s=t)}const a=Math.max(n,s),u=Math.max(r,1),f=`0 0 ${a} ${u}`;c(t,"width",`${a}`),c(t,"height",`${u}`),c(e,"preserveAspectRatio",getComputedStyle(e).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),c(e,"viewBox",f)&&e.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(t)};t()}()}();
 </script><script>!function(){"use strict";var e={from:function(e,n){var t=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),r=[].filter.call("string"==typeof e.slides?t.querySelectorAll(e.slides):e.slides||t.children,function(e){return"SCRIPT"!==e.nodeName}),i=r[0],l={},o=function(e,n){r[e]&&(a("deactivate",u(i,n)),i=r[e],a("activate",u(i,n)))},s=function(e,n){var t=r.indexOf(i)+e;a(e>0?"next":"prev",u(i,n))&&o(t,n)},c=function(e,n){l[e]=(l[e]||[]).filter(function(e){return e!==n})},a=function(e,n){return(l[e]||[]).reduce(function(e,t){return e&&!1!==t(n)},!0)},u=function(e,n){return(n=n||{}).index=r.indexOf(e),n.slide=e,n},d={on:function(e,n){return(l[e]||(l[e]=[])).push(n),c.bind(null,e,n)},off:c,fire:a,slide:function(e,n){if(!arguments.length)return r.indexOf(i);a("slide",u(r[e],n))&&o(e,n)},next:s.bind(null,1),prev:s.bind(null,-1),parent:t,slides:r};return(n||[]).forEach(function(e){e(d)}),o(0),d}},n=function(){return function(e){e.slides.forEach(function(e){e.addEventListener("keydown",function(e){(/INPUT|TEXTAREA|SELECT/.test(e.target.nodeName)||"true"===e.target.contentEditable)&&e.stopPropagation()})})}};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.map(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",n=>{e.slides.map(e=>e.classList.remove("bespoke-marp-active")),n.slide.classList.add("bespoke-marp-active")})}function r(e=2e3){return n=>{let t;function r(){t&&clearTimeout(t),t=setTimeout(()=>{n.parent.classList.add("bespoke-marp-inactive")},e),n.parent.classList.remove("bespoke-marp-inactive")}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}var i,l=(function(e){var n,t,r,i,l,o;n="undefined"!=typeof window&&void 0!==window.document?window.document:{},t=e.exports,r="undefined"!=typeof Element&&"ALLOW_KEYBOARD_INPUT"in Element,i=function(){for(var e,t=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,i=t.length,l={};r<i;r++)if((e=t[r])&&e[1]in n){for(r=0;r<e.length;r++)l[t[0][r]]=e[r];return l}return!1}(),l={change:i.fullscreenchange,error:i.fullscreenerror},o={request:function(e){return new Promise(function(t){var l=i.requestFullscreen,o=function(){this.off("change",o),t()}.bind(this);e=e||n.documentElement,/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)?e[l]():e[l](r?Element.ALLOW_KEYBOARD_INPUT:{}),this.on("change",o)}.bind(this))},exit:function(){return new Promise(function(e){if(this.isFullscreen){var t=function(){this.off("change",t),e()}.bind(this);n[i.exitFullscreen](),this.on("change",t)}else e()}.bind(this))},toggle:function(e){return this.isFullscreen?this.exit():this.request(e)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,t){var r=l[e];r&&n.addEventListener(r,t,!1)},off:function(e,t){var r=l[e];r&&n.removeEventListener(r,t,!1)},raw:i},i?(Object.defineProperties(o,{isFullscreen:{get:function(){return Boolean(n[i.fullscreenElement])}},element:{enumerable:!0,get:function(){return n[i.fullscreenElement]}},enabled:{enumerable:!0,get:function(){return Boolean(n[i.fullscreenEnabled])}}}),t?e.exports=o:window.screenfull=o):t?e.exports=!1:window.screenfull=!1}(i={exports:{}},i.exports),i.exports);function o(e){e.fullscreen=(()=>l.toggle(document.body)),document.addEventListener("keydown",n=>{70!==n.which&&122!==n.which||n.altKey||n.ctrlKey||n.metaKey||!l.enabled||(e.fullscreen(),n.preventDefault())})}function s(e={}){const n=Object.assign({history:!0},e);return e=>{function t(){const n=parseInt(window.location.hash.slice(1),10);Number.isNaN(n)||function(n){const t=Math.max(0,Math.min(n,e.slides.length-1));t!==e.slide()&&e.slide(t)}(n-1)}setTimeout(()=>{t(),e.on("activate",e=>{n.history?window.location.hash=e.index+1:window.location.replace(`#${e.index+1}`)}),window.addEventListener("hashchange",t)},0)}}var c,a=function(e){return function(n){var t="vertical"!==e;document.addEventListener("keydown",function(e){(34==e.which||32==e.which&&!e.shiftKey||t&&39==e.which||!t&&40==e.which)&&n.next(),(33==e.which||32==e.which&&e.shiftKey||t&&37==e.which||!t&&38==e.which)&&n.prev()})}};function u(e={}){const n=Object.assign({interval:200},e);return e=>{a()(e),document.addEventListener("keydown",n=>{35===n.which&&e.slide(e.slides.length-1),36===n.which&&e.slide(0),38===n.which&&e.prev(),40===n.which&&e.next()});let t,r,i=0;e.parent.addEventListener("wheel",l=>{let o=!1;const s=(e,n)=>{e&&(o=o||function(e,n){return function(e,n){const t=n===c.X?"Width":"Height";return e[`client${t}`]<e[`scroll${t}`]}(e,n)&&function(e,n){const{overflow:t}=e,r=e[`overflow${n}`];return"auto"===t||"scroll"===t||"auto"===r||"scroll"===r}(getComputedStyle(e),n)}(e,n)),e&&e.parentElement&&s(e.parentElement,n)};if(0!==l.deltaX&&s(l.target,c.X),0!==l.deltaY&&s(l.target,c.Y),o)return;l.preventDefault(),r&&clearTimeout(r),r=setTimeout(()=>{t=0},n.interval);const a=Date.now()-i<n.interval,u=Math.sqrt(Math.pow(l.deltaX,2)+Math.pow(l.deltaY,2)),d=u<=t;if(t=u,a||d)return;let f;(l.deltaX>0||l.deltaY>0)&&(f="next"),(l.deltaX<0||l.deltaY<0)&&(f="prev"),f&&(e[f](),i=Date.now())})}}function d(e=".bespoke-marp-osc"){const n=document.querySelector(e);if(!n)return()=>{};const t=(e,t)=>{n.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(t)};return l.enabled||t("fullscreen",e=>e.style.display="none"),e=>{n.addEventListener("click",n=>{if(n.target instanceof HTMLElement)switch(n.target.dataset.bespokeMarpOsc){case"next":e.next();break;case"prev":e.prev();break;case"fullscreen":"function"==typeof e.fullscreen&&l.enabled&&e.fullscreen()}}),e.parent.appendChild(n),e.on("activate",({index:n})=>{t("page",t=>t.textContent=`Page ${n+1} of ${e.slides.length}`),t("prev",e=>e.disabled=0===n),t("next",t=>t.disabled=n===e.slides.length-1)}),l.onchange(()=>t("fullscreen",e=>e.classList.toggle("exit",l.isFullscreen)))}}!function(e){e.X="X",e.Y="Y"}(c||(c={}));const f=".bespoke-progress-bar";function h(e){e.on("activate",n=>{document.querySelectorAll(f).forEach(t=>{t.style.flexBasis=`${100*n.index/(e.slides.length-1)}%`})})}function p(e={}){const n=Object.assign({slope:Math.tan(-35*Math.PI/180),swipeThreshold:30},e);return e=>{let t;const r=e.parent,i=e=>{const n=r.getBoundingClientRect();return{x:e.pageX-(n.left+n.right)/2,y:e.pageY-(n.top+n.bottom)/2}};r.addEventListener("touchstart",e=>{t=1===e.touches.length?i(e.touches[0]):void 0}),r.addEventListener("touchmove",e=>{if(t)if(1===e.touches.length){e.preventDefault();const n=i(e.touches[0]),r=n.x-t.x,l=n.y-t.y;t.delta=Math.sqrt(Math.pow(Math.abs(r),2)+Math.pow(Math.abs(l),2)),t.radian=Math.atan2(r,l)}else t=void 0}),r.addEventListener("touchend",r=>{if(t){if(t.delta&&t.delta>=n.swipeThreshold){let i=t.radian-n.slope;i=(i+Math.PI)%(2*Math.PI)-Math.PI,e[i<0?"next":"prev"](),r.stopPropagation()}t=void 0}})}}e.from(document.getElementById("presentation"),[n(),t,r(),s({history:!1}),u(),o,h,p(),d()])}();

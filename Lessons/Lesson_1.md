@@ -12,6 +12,7 @@ Research Computing
 * Part 3: Learning about software modules and the batch job submission system.
 * Part 4: Submitting test jobs.
 * Part 5: PBS Command Summaries
+* Part 6: WEHI Filesystems
 ---
 
 
@@ -107,7 +108,8 @@ Research Computing
 ---
 
 # Part 1: Virtualization
-<img src="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/virtualization.png" />
+
+![Virtualization](../Images/virtualization.png)
 
 ---
 
@@ -124,7 +126,7 @@ Research Computing
 ---
 
 # Part 1: Milton overview
-<img src="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/Milton_Overview.png" />
+![Milton overview](../Images/Milton_Overview.png)
 
 ---
 
@@ -140,12 +142,12 @@ Research Computing
 ---
 
 # Part 1: Logging in from Windows
-<img src="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-1.png" />
+![putty](../Images/putty-1.png)
 
 ---
 
 # Part 1: Logging in from Windows
-<img src="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/putty-2.png" />
+![putty](../Images/putty-2.png)
 
 ---
 
@@ -157,7 +159,7 @@ Research Computing
 
 
 # Part 2: It's a Linux Command Line World 
-<img src="https://raw.githubusercontent.com/WEHI-ResearchComputing/MiltonIntro/master/Images/gnulinux.png" align="center" height="25%" width="25%" vspace="5" hspace="5" />
+![GNU](../Images/gnulinux.png)
 
 * The command line interface (CLI) provides a great deal more power and is very resource efficient.
 * Linux scales and does so with stability and efficiency.
@@ -458,8 +460,7 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 * For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.
 ---
 
-
-<img src="http://levlafayette.com/files/rabbitjobs.png" width="100%" height="100%" title="Job submission using rabbits" />
+![rabbits](../Images/rabbitjobs.png)
 From the IBM 'Red Book' on Job Submission.
 
 ---
@@ -666,18 +667,54 @@ e.g. `cd $PBS_O_WORKDIR`
 * google (but there are variants)
 * most `qstat` commands can be limited to a jobid or user
 
-| Option         | explanation                 | 
-|----------------|-----------------------------|
-| `-u <userid>`  |only for that user           |
-| `-n`, `-n1`    |show nodes                   |
-| `-f`           |full report                  |
-| `-q`, `-Q`     |show queues                  |
-| `-a`           |alternative format           |
-| `-x`           |XML format                   |
-| `-e`, `-o`     |locations for output streams |
+| Option         | explanation                  | 
+|----------------|------------------------------|
+| `-u <userid>`  | only for that user           |
+| `-n`, `-n1`    | show nodes                   |
+| `-f`           | full report                  |
+| `-q`, `-Q`     | show queues                  |
+| `-a`           | alternative format           |
+| `-x`           | XML format                   |
+| `-e`, `-o`     | locations for output streams |
+---
+
+# Part 6: WEHI filesystems
+##  Home areas
+What does "home area" mean?
+* Linux:
+	* The directory you start in when you login
+	* location of special files
+	* `$HOME` and `~`
+    * These will be different on different systems
 ---
 
 
+# Part 6: WEHI filesystems
+##  Home areas
+* Mac:
+	* The folder named with your userid on FS_ALL
+	* You need to manually "connect to server ..." from the finder
+* Windows
+	* W: drive should be mapped automatically
+---
+
+# Part 6: WEHI Home areas
+* In most milton nodes, including unix500, the home area is `/home/<userid>`
+	* also visible as `/stornext/HPCScratch/home/<userid>`
+* Desktop or main home area is `/wehisan/home/allstaff/<s>/<surname.i>/`
+* This is also the home area for the old unix3xx and unix4xx home areas
+* To copy data from your desktop
+	* copy to your home with the finder/explorer
+	* copy from "main" home area to your "milton" home area
+* Milton home areas are on HPCScratch and are **not** backed up
+---
+
+# Part 6: WEHI lab areas
+* All data are owned by the lab, then the division then the institute
+* Most labs will have a lab area for their data.
+* All valuable data should on a lab area - these are backed up
+* Use the Milton home area for temporary data
+---
 
 # Slide Respository
 * These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.
@@ -685,5 +722,5 @@ e.g. `cd $PBS_O_WORKDIR`
 
 ---
 
-<img src="https://raw.githubusercontent.com/UoM-ResPlat-DevOps/SpartanIntro/master/Images/hypnotoad.png" width="150%" height="150%" />
+![toad](../Images/hypnotoad.png)
 ---
