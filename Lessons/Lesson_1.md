@@ -21,6 +21,24 @@ Research Computing
 * A copy of these slides and sample code is available at: `https://github.com/WEHI-ResearchComputing/MiltonIntro`
 
 ---
+
+# Research Computing
+* Part of ITS
+* Operate Milton
+* Provide support and guidance to researchers
+* Data management
+
+| Whoc            | Role |
+|:----------------|:-----------------------------------------:|
+| Andrew Isaac    | Head of Research Computing                |
+| Jakub Szarlat   | eResearch                                 |
+| Miffy Edwards   | Program delivery manager, data management |
+| Stephenie Gibbs | eResearch                                 |
+| Miguel Esteva   | eResearch                                 |
+| Junyao Deng     | eResearch                                 |
+| Evan Thomas     | Research Computing Scientist              |
+---
+
 # Getting help I
 * More documentation is available on Catalyst: `Catalyst -> Research -> Research Computing`
 * Help is available at: `helpdesk@wehi.edu.au`. 
@@ -722,5 +740,5 @@ What does "home area" mean?
 
 ---
 
-![toad](../Images/hypnotoad.png)
+![toad](../Images/hypnotoad.png)	
 ---
