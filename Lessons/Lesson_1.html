@@ -91,7 +91,7 @@ Research Computing</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-theme="default" style="--theme:default;">
 <h1>Goals for today</h1>
 <ul>
-<li>Part 1: Learning about supercomputers and Milton.</li>
+<li>Part 1: Learning about supercomputers and research computing at WEHI.</li>
 <li>Part 2: Logging on and exploring the Linux Environment.</li>
 <li>Part 3: Learning about software modules and the batch job submission system.</li>
 <li>Part 4: Submitting test jobs.</li>
@@ -104,12 +104,64 @@ Research Computing</p>
 <ul>
 <li>These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.</li>
 <li>A copy of these slides and sample code is available at: <code>https://github.com/WEHI-ResearchComputing/MiltonIntro</code></li>
+<li>Send me an email: <code>thomas.e@wehi.edu.au</code></li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-theme="default" style="--theme:default;">
+<h1>Research Computing at WEHI</h1>
+<ul>
+<li>Part of ITS which is part of professional services</li>
+<li>Operate our high performance computer (HPC) - Milton</li>
+<li>Provide support and guidance to researchers</li>
+<li>Data management</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Who</th>
+<th style="text-align:center">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Andrew Isaac</td>
+<td style="text-align:center">Head of Research Computing</td>
+</tr>
+<tr>
+<td style="text-align:left">Jakub Szarlat</td>
+<td style="text-align:center">eResearch</td>
+</tr>
+<tr>
+<td style="text-align:left">Miffy Edwards</td>
+<td style="text-align:center">Program delivery manager, data management</td>
+</tr>
+<tr>
+<td style="text-align:left">Stephenie Gibbs</td>
+<td style="text-align:center">eResearch</td>
+</tr>
+<tr>
+<td style="text-align:left">Miguel Esteva</td>
+<td style="text-align:center">eResearch</td>
+</tr>
+<tr>
+<td style="text-align:left">Junyao Deng</td>
+<td style="text-align:center">eResearch</td>
+</tr>
+<tr>
+<td style="text-align:left">Evan Thomas</td>
+<td style="text-align:center">Research Computing Scientist</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-theme="default" style="--theme:default;">
 <h1>Getting help I</h1>
 <ul>
-<li>More documentation is available on Catalyst: <code>Catalyst -&gt; Research -&gt; Research Computing</code></li>
+<li>More documentation is available on Catalyst: <code>Catalyst -&gt; Research -&gt; Research Computing</code>
+<ul>
+<li>Documentation website coming soon</li>
+</ul>
+</li>
 <li>Help is available at: <code>helpdesk@wehi.edu.au</code>.</li>
 <li>Other training is also conducted by:
 <ul>
@@ -119,18 +171,18 @@ Research Computing</p>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-theme="default" style="--theme:default;">
 <h1>Getting help II</h1>
 <ul>
 <li>Join the slack team: <a href="https://milton-wehi.slack.com/signup">https://milton-wehi.slack.com/signup</a>
 <ul>
-<li>This is user to user support. ITS do not monitor it.</li>
+<li>This is user to user support. ITS do not (officially) monitor it.</li>
 </ul>
 </li>
 <li>Join the MUG mailing list. Send a request to <a href="mailto:research.computing@wehi.edu.au">research.computing@wehi.edu.au</a></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-theme="default" style="--theme:default;">
 <h1>Part I: Helpdesk</h1>
 <ul>
 <li>Read the Message of the Day when you login!</li>
@@ -143,37 +195,46 @@ Research Computing</p>
 </ul>
 </li>
 <li>Email helpdesk: <code>helpdesk@wehi.edu.au</code>!</li>
-<li>Do not email individual sysadmins; we need consolidated records. Please be informative about the error or issue.</li>
+<li>Do not email individuals; we need consolidated records. Please be informative about the error or issue.
+<ul>
+<li>The system(s) you were using, e.g. unix500, batch system, etc.</li>
+<li>Provide details such as modules loaded, etc</li>
+<li>Copy and paste errors messages and commands when available</li>
+</ul>
+</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-theme="default" style="--theme:default;">
 <h1>Part 1: Supercomputers and HPC</h1>
 <ul>
 <li>&quot;Supercomputer&quot; means any single computer system that has exceptional processing power for its time.</li>
 <li>One popular metric (LINPACK) is the number of floating point operations per second (FLOPS) such a system can carry out (<a href="http://top500.org">http://top500.org</a>). HPC Challenge and HPCG are broader, more interesting metrics.</li>
-<li>High Performance Computer (HPC) is any computer system whose architecture allows for above average performance. High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.</li>
+<li>High Performance Computer (HPC) is any computer system whose architecture allows for above average performance.</li>
+<li>High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-theme="default" style="--theme:default;">
-<h1>Part 1: Clusters and Research Computing</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-theme="default" style="--theme:default;">
+<h1>Part 1: Clusters</h1>
 <ul>
 <li>Clustered computing is when two or more computers serve a single resource. This improves performance and provides redundancy in case of failure system. Typically commodity systems with a high-speed local network.</li>
 <li>Research computing refers to the concepts and software applications used by the scientific community to aid research. It does not necessarily equate with high performance computing, or the use of clusters. It is whatever researchers use and do. Not issues of producibility and environments.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-theme="default" style="--theme:default;">
 <h1>Part 1: Parallel Computing</h1>
 <ul>
 <li>With a cluster architecture, applications can be more easily parallelised across them.
 <ul>
-<li><em>Data parallel</em>: running the same task in parallel over different inputs</li>
-<li><em>Task parallel</em>: running a single task in parallel with communication. e.g. sequence alignment; molecular dynamics</li>
+<li><em>Data parallel</em>: running the same task in parallel over different inputs, sometimes referred to as embarrassingly parallel.</li>
+<li><em>Task parallel</em>: running a single task in parallel with communication. e.g. sequence alignment; molecular dynamics.</li>
 </ul>
 </li>
-<li>Further examples of serial versus parallel; weather forecasting, aerodynamic design, fluid mechanics, radiation modelling, molecullar dynamics, CGI rendering for popular movies, etc. Reality is a parallel system!</li>
+<li>Software needs to specially written to be task parallel.</li>
+<li>Within node vs between node parallelism.</li>
+<li>WEHI systems are designed with data parallelism and within node parallelism in mind.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-theme="default" style="--theme:default;">
 <h1>Part 1: HPC Cluster and Parallel Processing Components</h1>
 <ul>
 <li>A chassis or rack, containing multiple computer system units, interconnect, and providing power.</li>
@@ -181,14 +242,17 @@ Research Computing</p>
 <li>Sockets contain a processor
 <ul>
 <li>which has several <em>cores</em></li>
-<li>each core processes to logical streams of instructions (<em>hyperthreads</em>)</li>
+<li>each core processes two logical streams of instructions (<em>hyperthreads</em>)</li>
 </ul>
 </li>
-<li>The term Central Processing Unit, <em>CPU</em>, nearly always refers to hyperthread.</li>
-<li>Logical processes have shared resources (e.g., memory) which may have multiple instruction stream threads.</li>
+<li>In day to day use the term Central Processing Unit, <em>CPU</em>, nearly always refers to a hyperthread.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-theme="default" style="--theme:default;">
+<h1>Part 1: A rack</h1>
+<p><img src="../Images/HPC-chasis.png" alt="rack" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-theme="default" style="--theme:default;">
 <h1>Part 1: Cloud computing</h1>
 <ul>
 <li>Infrastructure as a Service (IaaS)
@@ -218,7 +282,7 @@ Research Computing</p>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-theme="default" style="--theme:default;">
 <h1>Part 1: Virtualization</h1>
 <ul>
 <li>Modern data centres present resources in <em>virtual machines</em> (VMs)</li>
@@ -235,21 +299,21 @@ Research Computing</p>
 <li>Machines can be easily moved between different hardware to provide the best resource utilisation</li>
 </ul>
 </li>
-<li>Milton uses VMWare data centre software to provide virtualization.</li>
+<li>Milton uses VMWare data centre software suit to provide virtualization.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-theme="default" style="--theme:default;">
 <h1>Part 1: Virtualization</h1>
 <p><img src="../Images/virtualization.png" alt="Virtualization" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-theme="default" style="--theme:default;">
 <h1>Part 1: Milton Hardware</h1>
 <ul>
 <li>In 2016 WEHI purchased an <em>on premise</em> High Performance Computer called Milton.</li>
 <li>nearly 2500 cores (2 hyperthreads per core)
 <ul>
-<li>A mix of Skylake and Broadwell Intel processors</li>
-<li>Up to 56 cores in a single physical node</li>
+<li>A mix of Skylake and Broadwell Intel Xenon processors</li>
+<li>Up to 64 cores in a single physical node</li>
 </ul>
 </li>
 <li>40TB RAM
@@ -257,45 +321,55 @@ Research Computing</p>
 <li>configurations from 128GB to 1.5TB (can be reconfigured if required)</li>
 </ul>
 </li>
-<li>A mix of 40GbE and 10GbE network connnections</li>
+<li>A mix of 40GbE and 10GbE network connnections (gigabits per second)</li>
 <li>20 nVidia P100 GPUs</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-theme="default" style="--theme:default;">
 <h1>Part 1: Milton overview</h1>
 <p><img src="../Images/Milton_Overview.png" alt="Milton overview" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-theme="default" style="--theme:default;">
 <h1>Part 1: Logging In</h1>
 <ul>
-<li>To log on to Milton you need a WEHI logon - that's is!</li>
+<li>To log on to Milton you need a WEHI username - that's is!</li>
 <li>Mac OS 10.x.
 <ul>
 <li>Open a terminal</li>
-<li><code>ssh unix500</code></li>
+<li><code>ssh unix500</code>
+<ul>
+<li><code>ssh &lt;username&gt;@unix500</code></li>
+</ul>
+</li>
 <li>Type your password</li>
 </ul>
 </li>
 <li>For MS-Windows users, the free PuTTY client is recommended (<a href="http://putty.org">http://putty.org</a>).</li>
-<li><em><strong>Note:</strong></em> Logging into other systems may be more complicated. e.g.  <code>ssh eat@spartan.hpc.unimelb.edu.au</code></li>
+<li>You can login from multiple terminal windows!</li>
+<li><em><strong>Note:</strong></em> Logging into other systems may be more complicated.
+<ul>
+<li>e.g.  <code>ssh eat@spartan.hpc.unimelb.edu.au</code></li>
+<li><code>&lt;username&gt;@&lt;fully qualified system name&gt;</code></li>
+</ul>
+</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-theme="default" style="--theme:default;">
 <h1>Part 1: Logging in from Windows</h1>
 <p><img src="../Images/putty-1.png" alt="putty" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-theme="default" style="--theme:default;">
 <h1>Part 1: Logging in from Windows</h1>
 <p><img src="../Images/putty-2.png" alt="putty" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-theme="default" style="--theme:default;">
-<h1>Part 1: SSH Keys, Config, Data Transfers</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-theme="default" style="--theme:default;">
+<h1>Part 1: SSH Keys</h1>
 <ul>
-<li>Consider using an <code>.ssh/config</code> file and using passwordless SSH by creating a keypair and adding to your <code>.ssh/authorized_keys</code> file on Spartan.</li>
+<li>Consider using an <code>.ssh/config</code> file and using passwordless SSH by creating a keypair and adding to your <code>.ssh/authorized_keys</code> file on Milton or other target system.</li>
 <li>SSH Keys will make your life easier. Follow the instructions here: <a href="https://dashboard.hpc.unimelb.edu.au/faq/#how-do-setup-passwordless-ssh-login">https://dashboard.hpc.unimelb.edu.au/faq/#how-do-setup-passwordless-ssh-login</a></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-theme="default" style="--theme:default;">
 <h1>Part 2: It's a Linux Command Line World</h1>
 <p><img src="../Images/gnulinux.png" alt="GNU" /></p>
 <ul>
@@ -305,7 +379,7 @@ Research Computing</p>
 <li>The operating system and many applications are provided as &quot;free and open source&quot; which are better placed to improve, optimize and maintain.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-theme="default" style="--theme:default;">
 <h1>Part 2: File System Hierarchy</h1>
 <ul>
 <li>Files are organised in a hierachy of directories (or folders)</li>
@@ -318,7 +392,7 @@ Research Computing</p>
 <li>See <a href="https://swcarpentry.github.io/shell-novice/fig/standard-filesystem-hierarchy.svg">https://swcarpentry.github.io/shell-novice/fig/standard-filesystem-hierarchy.svg</a></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-theme="default" style="--theme:default;">
 <h1>Part 2: Exploring The Environment</h1>
 <table>
 <thead>
@@ -343,8 +417,8 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-theme="default" style="--theme:default;">
-<h1>Part 2: Command Options</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-theme="default" style="--theme:default;">
+<h1>Part 2: Command Options - the <code>ls</code> command</h1>
 <ul>
 <li>Linux commands often come with options expressed as: <code>&lt;command&gt; --&lt;option[s]&gt;</code></li>
 <li>Options can be expressed as full words or abbreviated characters.</li>
@@ -359,16 +433,16 @@ Research Computing</p>
 <tbody>
 <tr>
 <td><code>ls -lart</code></td>
-<td style="text-align:center">Directory listing with options (long, all, reverse time)</td>
+<td style="text-align:center">long, all, reverse time</td>
 </tr>
 <tr>
-<td><code>ls -lash</code></td>
-<td style="text-align:center">Directory listing with options (long, all, size in human readable</td>
+<td><code>ls -lah</code></td>
+<td style="text-align:center">long, all, human readable size</td>
 </tr>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-theme="default" style="--theme:default;">
 <h1>Part 2: Getting command help</h1>
 <p>Linux commands come with &quot;man&quot; (manual) pages, which provide a terse description of the meaning and options available to a command. A verbose alternative to man is info.</p>
 <table>
@@ -398,7 +472,60 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-theme="default" style="--theme:default;">
+<h1>Command line editing</h1>
+<ul>
+<li>up and down arrow keys navigate through your command line history
+<ul>
+<li><code>history</code> command</li>
+</ul>
+</li>
+<li>left and right arrrow keys move the text on the command line</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Key stroke</th>
+<th style="text-align:left">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>up arrow</code></td>
+<td style="text-align:left">previous command</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>down arrow</code></td>
+<td style="text-align:left">next command</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ctrl-a</code></td>
+<td style="text-align:left">beggining of the line</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ctrl-e</code></td>
+<td style="text-align:left">end of the line</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ctrl-u</code></td>
+<td style="text-align:left">delete to the beginning of the line</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ctrl-k</code></td>
+<td style="text-align:left">delete to the end of the line</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-theme="default" style="--theme:default;">
+<h1>Tab to completion</h1>
+<ul>
+<li>Hit <code>&lt;tab&gt;</code> and the current text will complete if there is a unique completion</li>
+<li>Hit <code>&lt;tab&gt;</code> twice to get a list of possible completions</li>
+<li>Try it: <code>ls -l /stornext/HPCScratch/evan/training/Lesson_1.md</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-theme="default" style="--theme:default;">
 <h1>Part 2: the <code>less</code> command</h1>
 <ul>
 <li>used for conviently viewing large amounts of text</li>
@@ -429,6 +556,10 @@ Research Computing</p>
 <td style="text-align:left">find backwards</td>
 </tr>
 <tr>
+<td style="text-align:left"><code>/</code>, <code>?</code></td>
+<td style="text-align:left">repeat find</td>
+</tr>
+<tr>
 <td style="text-align:left"><code>g</code></td>
 <td style="text-align:left">goto to top</td>
 </tr>
@@ -447,15 +578,7 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-theme="default" style="--theme:default;">
-<h1>Tab to completion</h1>
-<ul>
-<li>Hit <code>&lt;tab&gt;</code> and the current text will complete if there is a unique completion</li>
-<li>Hit <code>&lt;tab&gt;</code> twice to get a list of possible completions</li>
-<li>Try it: <code>ls -l /stornext/HPCScratch/evan/training/Lesson_1.md</code></li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-theme="default" style="--theme:default;">
 <h1>Part 2: Pipes</h1>
 <p>Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol.</p>
 <table>
@@ -477,7 +600,7 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-theme="default" style="--theme:default;">
 <h1>Part 2: Redirects</h1>
 <p>To redirect output use the '&gt;' symbol. To redirect input (for example, to feed data to a command) use the '&lt;'. Concatenation is achieved through the use of '&gt;&gt;' symbol.</p>
 <table>
@@ -499,14 +622,14 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-theme="default" style="--theme:default;">
 <h1>Part 2: Files and Text Editing I</h1>
 <ul>
 <li>Linux filenames can be constructed of any characters except the forward slash, which is for directory navigation. However it is best to avoid punctuation marks, non-printing characters (e.g., spaces). It is <em>much</em> better to use underscores or CamelCase instead of spaces, newlines etc (including in job names).</li>
 <li>Linux is case-sensitive with its filenames (e.g., list.txt, LIST.txt lisT.txT are different).</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-theme="default" style="--theme:default;">
 <h1>Part 2: Navigating the file system</h1>
 <table>
 <thead>
@@ -527,7 +650,7 @@ Research Computing</p>
 </tbody>
 </table>
 <ul>
-<li>Files are located via paths</li>
+<li>Files are located via paths - a series of directory names seperated by <code>/</code></li>
 <li>Paths can be
 <ul>
 <li>absolute - the start with a '/'</li>
@@ -539,7 +662,7 @@ Research Computing</p>
 <li>Demonstrate on the terminal</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-theme="default" style="--theme:default;">
 <h1>Part 2: Files and Text Editing II</h1>
 <ul>
 <li>Files do not usually require a program association suffix, although you may find this convenient (a C compiler like files to have .c in their suffix, for example).</li>
@@ -556,7 +679,7 @@ Research Computing</p>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-theme="default" style="--theme:default;">
 <h1>Part 2: Copying Files to a Local System</h1>
 <p>To get a copy of the files from an external source to your home directory, you will probably want to use <code>wget</code>, or <code>git</code>, or <code>scp</code>.</p>
 <table>
@@ -578,7 +701,7 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-theme="default" style="--theme:default;">
 <h1>Part 2: Copying Files Within a Local System</h1>
 <p>To copy a file from within a system use the <code>cp</code> command. Common options include <code>-r</code> to copy an entire directory</p>
 <table>
@@ -595,7 +718,7 @@ Research Computing</p>
 </tr>
 <tr>
 <td style="text-align:left"><code>cp -r source destination</code></td>
-<td style="text-align:center">Recursive copy (e.g., a directory)</td>
+<td style="text-align:center">Recursive copy (i.e., a directory)</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>cp -a source destination</code></td>
@@ -604,11 +727,13 @@ Research Computing</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-theme="default" style="--theme:default;">
 <h1>Part 2: Copying</h1>
 <p>Try<br />
 <code>cp list.txt list2.txt</code><br />
 <code>cp -r /stornext/HPCScratch/evan/training .</code></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-theme="default" style="--theme:default;">
 <h1>Part 2: Copying Files Between Systems</h1>
 <p>To copy files to between systems desktop use SCP (secure copy protocol) or SFTP (secure file transfer protocol), combining the ssh and cp functionality. The <code>cp</code> options can also be used. The source or destination address should also require a remote shell login.</p>
 <table>
@@ -621,12 +746,12 @@ Research Computing</p>
 <tbody>
 <tr>
 <td style="text-align:left"><code>scp source.address:/path/ destination.address:/path/</code></td>
-<td style="text-align:center">Copies files on a network</td>
+<td style="text-align:center">Copies files across a network</td>
 </tr>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-theme="default" style="--theme:default;">
 <h1>Part 2: Synchronising Files and Directories I</h1>
 <ul>
 <li>The <code>rsync</code> utility provides a fast way to keep two collections of files &quot;in sync&quot; by tracking changes.</li>
@@ -634,7 +759,7 @@ Research Computing</p>
 For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles .</code></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-theme="default" style="--theme:default;">
 <h1>Part 2: Synchronising Files and Directories II</h1>
 <table>
 <thead>
@@ -655,7 +780,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-theme="default" style="--theme:default;">
 <h1>Part 2: Synchronising Files and Directories III</h1>
 <ul>
 <li>The <code>rsync -avz</code> command ensures that it is in archive mode (recursive, copies symlinks, preserves permissions), is verbose, and compresses on transmission.</li>
@@ -663,7 +788,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Note that rsync is &quot;trailing slash sensitive&quot;. A trailing / on a source means &quot;copy the contents of this directory&quot;. Without a trailing slash it means &quot;copy the directory&quot;.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-theme="default" style="--theme:default;">
 <h1>Part 2: Synchronising Files and Directories IV</h1>
 <ul>
 <li>Rsync can be used in a synchronise mode with the --delete flag.  Consider this with the <code>-n</code>, or <code>--dry-run</code> options first!</li>
@@ -687,13 +812,13 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-theme="default" style="--theme:default;">
 <h1>Part 2: Creating Directories, Copying and Moving Files</h1>
 <ul>
 <li>Directories can be created with the <code>mkdir</code> command (e.g., <code>mkdir braf</code>).</li>
 <li>Files can be copied with the <code>cp</code> command
 <ul>
-<li><code>cd</code> - change you you home directory</li>
+<li><code>cd</code> - change to your home directory</li>
 <li><code>cp /stornext/HPCScratch/evan/training/gattaca.txt ~</code> copy a file to you home directory</li>
 <li><code>cp gattaca.txt gattaca2.txt</code> make another copy of the file</li>
 </ul>
@@ -701,7 +826,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Files can be moved or <em>renamed</em> with the <code>mv</code> command (e.g., <code>mv gattaca2.txt braf</code>)</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-theme="default" style="--theme:default;">
 <h1>Part 2: File Differences</h1>
 <ul>
 <li>File differences can be determined by timestamp (e.g., <code>ls -l gattaca.txt braf/gattaca2.txt</code>)</li>
@@ -712,7 +837,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li><code>cmp</code> will simply report if there is a difference</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-theme="default" style="--theme:default;">
 <h1>Part 2: Searches and Wildcards</h1>
 <ul>
 <li>Simple file searches
@@ -731,7 +856,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>There are also range searches (e.g., <code>[a-z]</code> any character between a and z, inclusive)</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-theme="default" style="--theme:default;">
 <h1>Part 2: Deletions</h1>
 <ul>
 <li>Files can be deleted with the <code>rm</code> command (e.g., <code>rm gattaca.txt</code>)</li>
@@ -747,7 +872,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Consider the difference between <code>rm matlab *</code> to <code>rm matlab*</code>.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-theme="default" style="--theme:default;">
 <h1>Part 3: A Dynamic Software Environment</h1>
 <ul>
 <li>Software on Milton Linux systems (and many other HPCs) is provided by the module system</li>
@@ -756,7 +881,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Allows multiple versions of the same program</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-theme="default" style="--theme:default;">
 <h1>Part 3: Module Commands I</h1>
 <table>
 <thead>
@@ -789,7 +914,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-theme="default" style="--theme:default;">
 <h1>Part 3: Module Commands I</h1>
 <table>
 <thead>
@@ -814,7 +939,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-theme="default" style="--theme:default;">
 <h1>Part 3: Portable Batch System I</h1>
 <ul>
 <li>The Portable Batch System (or simply PBS) performs job scheduling by assigning unattended background tasks expressed as batch jobs, among the available resources.</li>
@@ -823,13 +948,13 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Our batch system is called <strong>Torquelord3</strong> (TL3)</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-theme="default" style="--theme:default;">
 <h1>Part 3: Slurm Workload Manager</h1>
 <ul>
 <li>Slurm, used at UoM on Spartan and many sites, was developed as a collaborative effort primarily by Lawrence Livermore National Laboratory, SchedMD, Linux NetworX, Hewlett-Packard, and Groupe Bull as a Free Software resource manager. As of November 2015, TOP500 list of most powerful computers in the world indicates that Slurm is the workload manager on six of the top ten systems. Slurm's design is very modular with about 100 optional plugins.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-theme="default" style="--theme:default;">
 <h1>Part 3: Job Submission Principles</h1>
 <ul>
 <li>The steps for job submission are (a) setup and launch., (b) monitor., and (c) retrieve results and analyse.</li>
@@ -842,7 +967,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Job scripts are simply resource requests (understood by scheduler), a batch of commands (understood by shell) with output to files.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-theme="default" style="--theme:default;">
 <h1>Part 3: Fair Share</h1>
 <ul>
 <li>A cluster is a shared environment thus a a resource requesting system. Policies ensure that everyone has a &quot;fair share&quot; to the resources (e.g., user processor limits).</li>
@@ -852,7 +977,7 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>Precise details of fair share are likely to change over time.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-theme="default" style="--theme:default;">
 <h1>Part 3: Backfilling</h1>
 <ul>
 <li>Many schedulers and resource managers use a backfilling algorithm to improve system utilisation and maximise job throughout.</li>
@@ -860,11 +985,11 @@ For example; <code>rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/work
 <li>For example, on an 8-core node, an 8 core job is running, a 4 core job is launched, then an 8 core job, then another 4 core job. The two 4 core jobs will run before the second 8 core job.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-theme="default" style="--theme:default;">
 <p><img src="../Images/rabbitjobs.png" alt="rabbits" /><br />
 From the IBM 'Red Book' on Job Submission.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-theme="default" style="--theme:default;">
 <h1>Part 3: What to run and what not to run on unix500</h1>
 <ul>
 <li>unix500 is a shared resource</li>
@@ -884,7 +1009,7 @@ From the IBM 'Red Book' on Job Submission.</p>
 <li>The batch system will be more stable and more performant</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-theme="default" style="--theme:default;">
 <h1>Part 3: Queues</h1>
 <ul>
 <li>Jobs are submitted to queues
@@ -918,7 +1043,7 @@ From the IBM 'Red Book' on Job Submission.</p>
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-theme="default" style="--theme:default;">
 <h1>Part 3: Basic steps</h1>
 <ul>
 <li>Develop a shell script, a text file of commands, to perform the work
@@ -932,7 +1057,7 @@ From the IBM 'Red Book' on Job Submission.</p>
 <li>Check job output and expected output files.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-theme="default" style="--theme:default;">
 <h1>Part 3: A script</h1>
 <pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-built_in">cd</span> &lt;my-work-dir&gt;
@@ -940,7 +1065,7 @@ module load myapp
 myapp data
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-theme="default" style="--theme:default;">
 <h1>Part 3: Resources</h1>
 <ul>
 <li>The system needs to know what resources your jobs needs so it can schedule your job into an appropriate node and reserves the resources you have requested</li>
@@ -972,13 +1097,13 @@ myapp data
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-theme="default" style="--theme:default;">
 <h1>Part 3: Submit a job - command line resources</h1>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qsub -l nodes=<span class="hljs-number">1</span>:ppn=<span class="hljs-number">2</span>,mem=<span class="hljs-number">8</span>gb,walltime=<span class="hljs-number">01</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> &lt;script&gt;
 </span></span></foreignObject></svg></code></pre>
 <p><strong>Note:</strong> commas and colons</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-theme="default" style="--theme:default;">
 <h1>Part 3: Submit a job - script resources</h1>
 <pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-comment">#PBS -l nodes=1:ppn=2,mem=8gb,walltime=01:00:00 </span>
@@ -999,7 +1124,7 @@ myapp data
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qsub <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
 </span></span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-theme="default" style="--theme:default;">
 <h1>Part 3: After you submit your job</h1>
 <ul>
 <li>Your job is placed in a queue and job id is assigned</li>
@@ -1015,7 +1140,7 @@ myapp data
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-theme="default" style="--theme:default;">
 <h1>Part 3: Monitoring your job</h1>
 <p>To see all the jobs in the queue</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-attribute">qstat</span>
@@ -1047,7 +1172,7 @@ myapp data
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-theme="default" style="--theme:default;">
 <h1>Part 2: Killing jobs</h1>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qdel <span class="hljs-tag">&lt;<span class="hljs-name">jobid</span>&gt;</span>
 </span></span></foreignObject></svg></code></pre>
@@ -1055,7 +1180,7 @@ myapp data
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qdel <span class="hljs-keyword">all</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-theme="default" style="--theme:default;">
 <h1>Part 4: Interactive Jobs</h1>
 <ul>
 <li>An interactive job, based on the resource requests made on the command line, puts the user on to a compute node. This is typically done if they user wants to run a  large script (and shouldn't do it on the login node), or wants to test or debug a job. The  following command would launch one node with two processors for ten minutes.</li>
@@ -1063,7 +1188,7 @@ myapp data
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>qsub -I -l nodes=<span class="hljs-number">1</span>:ppn=<span class="hljs-number">2</span>,mem=<span class="hljs-number">1</span>gb,walltime=<span class="hljs-number">00</span>:<span class="hljs-number">10</span>:<span class="hljs-number">00</span>
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-theme="default" style="--theme:default;">
 <h1>Part 4: Worked example</h1>
 <pre><code class="language-bash"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>mkdir -p ~/braf
 <span class="hljs-built_in">cd</span> ~/braf
@@ -1077,7 +1202,7 @@ ls align.sh.*
 cat align.sh.*
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-theme="default" style="--theme:default;">
 <h1>Part 4: Exercise</h1>
 <p>Rerun the same job with 6 CPUs</p>
 <ol>
@@ -1091,7 +1216,7 @@ cat align.sh.*
 <li>Submit with the appropriate invocation of <code>qsub</code></li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-theme="default" style="--theme:default;">
 <h1>Part 5: PBS commands: qsub</h1>
 <ul>
 <li><code>man qsub</code></li>
@@ -1136,7 +1261,7 @@ cat align.sh.*
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-theme="default" style="--theme:default;">
 <h1>Part 5: PBS environment variables</h1>
 <table>
 <thead>
@@ -1166,7 +1291,7 @@ cat align.sh.*
 </table>
 <p>e.g. <code>cd $PBS_O_WORKDIR</code></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-theme="default" style="--theme:default;">
 <h1>Part 5: PBS commands: qstat</h1>
 <ul>
 <li><code>man qstat</code></li>
@@ -1212,7 +1337,7 @@ cat align.sh.*
 </tbody>
 </table>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-theme="default" style="--theme:default;">
 <h1>Part 6: WEHI filesystems</h1>
 <h2>Home areas</h2>
 <p>What does &quot;home area&quot; mean?</p>
@@ -1227,7 +1352,7 @@ cat align.sh.*
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-theme="default" style="--theme:default;">
 <h1>Part 6: WEHI filesystems</h1>
 <h2>Home areas</h2>
 <ul>
@@ -1244,7 +1369,7 @@ cat align.sh.*
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-theme="default" style="--theme:default;">
 <h1>Part 6: WEHI Home areas</h1>
 <ul>
 <li>In most milton nodes, including unix500, the home area is <code>/home/&lt;userid&gt;</code>
@@ -1263,7 +1388,7 @@ cat align.sh.*
 <li>Milton home areas are on HPCScratch and are <strong>not</strong> backed up</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-theme="default" style="--theme:default;">
 <h1>Part 6: WEHI lab areas</h1>
 <ul>
 <li>All data are owned by the lab, then the division then the institute</li>
@@ -1272,14 +1397,14 @@ cat align.sh.*
 <li>Use the Milton home area for temporary data</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-theme="default" style="--theme:default;">
 <h1>Slide Respository</h1>
 <ul>
 <li>These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.</li>
 <li>A copy of these slides and sample code is available at: <code>https://github.com/WEHI-ResearchComputing/MiltonIntro</code></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-theme="default" style="--theme:default;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-theme="default" style="--theme:default;">
 <h2><img src="../Images/hypnotoad.png" alt="toad" /></h2>
 </section>
 </foreignObject></svg></article><script>!function(){"use strict";var e,t,o=(function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var o=function(e,t,o){this.name=e,this.version=t,this.os=o};t.BrowserInfo=o;var n=function(e){this.version=e,this.name="node",this.os=process.platform};t.NodeInfo=n;var r=function(){this.bot=!0,this.name="bot",this.version=null,this.os=null};t.BotInfo=r;var i=3,s=[["aol",/AOLShield\/([0-9\._]+)/],["edge",/Edge\/([0-9\._]+)/],["yandexbrowser",/YaBrowser\/([0-9\._]+)/],["vivaldi",/Vivaldi\/([0-9\.]+)/],["kakaotalk",/KAKAOTALK\s([0-9\.]+)/],["samsung",/SamsungBrowser\/([0-9\.]+)/],["silk",/\bSilk\/([0-9._-]+)\b/],["chrome",/(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/],["phantomjs",/PhantomJS\/([0-9\.]+)(:?\s|$)/],["crios",/CriOS\/([0-9\.]+)(:?\s|$)/],["firefox",/Firefox\/([0-9\.]+)(?:\s|$)/],["fxios",/FxiOS\/([0-9\.]+)/],["opera-mini",/Opera Mini.*Version\/([0-9\.]+)/],["opera",/Opera\/([0-9\.]+)(?:\s|$)/],["opera",/OPR\/([0-9\.]+)(:?\s|$)$/],["ie",/Trident\/7\.0.*rv\:([0-9\.]+).*\).*Gecko$/],["ie",/MSIE\s([0-9\.]+);.*Trident\/[4-7].0/],["ie",/MSIE\s(7\.0)/],["bb10",/BB10;\sTouch.*Version\/([0-9\.]+)/],["android",/Android\s([0-9\.]+)/],["ios",/Version\/([0-9\._]+).*Mobile.*Safari.*/],["safari",/Version\/([0-9\._]+).*Safari/],["facebook",/FBAV\/([0-9\.]+)/],["instagram",/Instagram\s([0-9\.]+)/],["ios-webview",/AppleWebKit\/([0-9\.]+).*Mobile/],["searchbot",/alexa|bot|crawl(er|ing)|facebookexternalhit|feedburner|google web preview|nagios|postrank|pingdom|slurp|spider|yahoo!|yandex/]],a=[["iOS",/iP(hone|od|ad)/],["Android OS",/Android/],["BlackBerry OS",/BlackBerry|BB10/],["Windows Mobile",/IEMobile/],["Amazon OS",/Kindle/],["Windows 3.11",/Win16/],["Windows 95",/(Windows 95)|(Win95)|(Windows_95)/],["Windows 98",/(Windows 98)|(Win98)/],["Windows 2000",/(Windows NT 5.0)|(Windows 2000)/],["Windows XP",/(Windows NT 5.1)|(Windows XP)/],["Windows Server 2003",/(Windows NT 5.2)/],["Windows Vista",/(Windows NT 6.0)/],["Windows 7",/(Windows NT 6.1)/],["Windows 8",/(Windows NT 6.2)/],["Windows 8.1",/(Windows NT 6.3)/],["Windows 10",/(Windows NT 10.0)/],["Windows ME",/Windows ME/],["Open BSD",/OpenBSD/],["Sun OS",/SunOS/],["Chrome OS",/CrOS/],["Linux",/(Linux)|(X11)/],["Mac OS",/(Mac_PowerPC)|(Macintosh)/],["QNX",/QNX/],["BeOS",/BeOS/],["OS/2",/OS\/2/],["Search Bot",/(nuhk)|(Googlebot)|(Yammybot)|(Openbot)|(Slurp)|(MSNBot)|(Ask Jeeves\/Teoma)|(ia_archiver)/]];function l(e){var t=""!==e&&s.reduce(function(t,o){var n=o[0],r=o[1];if(t)return t;var i=r.exec(e);return!!i&&[n,i]},!1);if(!t)return null;var n=t[0],a=t[1];if("searchbot"===n)return new r;var l=a[1]&&a[1].split(/[._]/).slice(0,3);return l?l.length<i&&(l=l.concat(function(e){for(var t=[],o=0;o<e;o++)t.push("0");return t}(i-l.length))):l=[],new o(n,l.join("."),d(e))}function d(e){for(var t=0,o=a.length;t<o;t++){var n=a[t],r=n[0];if(n[1].test(e))return r}return null}function c(){return"undefined"!=typeof process&&process.version?new n(process.version.slice(1)):null}t.detect=function(){return"undefined"!=typeof navigator?l(navigator.userAgent):c()},t.parseUserAgent=l,t.detectOS=d,t.getNodeVersion=c}(e={exports:{}},e.exports),e.exports);(t=o)&&t.__esModule&&Object.prototype.hasOwnProperty.call(t,"default")&&t.default,o.BrowserInfo,o.NodeInfo,o.BotInfo;var n=o.detect;let r;o.parseUserAgent,o.detectOS,o.getNodeVersion;const i=["android","bb10","crios","facebook","fxios","instagram","ios-webview","ios","phantomjs","safari"];function s(e){Array.from(document.getElementsByTagName("svg"),t=>{if(t.hasAttribute("data-marpit-svg")){const{clientHeight:o,clientWidth:n}=t;t.style.transform||(t.style.transform="translateZ(0)");const r=e||t.currentScale||1,i=t.viewBox.baseVal.width/r,s=t.viewBox.baseVal.height/r,a=Math.min(o/s,n/i);Array.from(t.querySelectorAll(":scope > foreignObject"),e=>{const t=e.x.baseVal.value,r=e.y.baseVal.value;Array.from(e.querySelectorAll(":scope > section"),e=>{e.style.transformOrigin||(e.style.transformOrigin="0 0");const l=(n-a*i)/2-t,d=(o-a*s)/2-r;e.style.transform=`translate3d(${l}px,${d}px,0) scale(${a}) translate(${t}px,${r}px)`})})}})}const a="data-marp-fitting",l="data-marp-fitting-code",d="data-marp-fitting-math",c=(e,t,o)=>{if(e.getAttribute(t)!==o)return e.setAttribute(t,o),!0};!function(e=!0){const t=()=>{for(const e of function(){if(!r){r=[];const{name:e}=n()||{};i.includes(e)&&r.push(s)}return r}())e();Array.from(document.querySelectorAll(`svg[${a}="svg"]`),e=>{const t=e.firstChild,o=t.firstChild,{scrollWidth:n,scrollHeight:r}=o;let i,s=1;if(e.hasAttribute(l)&&(i=e.parentElement.parentElement),e.hasAttribute(d)&&(i=e.parentElement),i){const e=getComputedStyle(i),t=Math.ceil(i.clientWidth-parseFloat(e.paddingLeft)-parseFloat(e.paddingRight));t&&(s=t)}const a=Math.max(n,s),u=Math.max(r,1),f=`0 0 ${a} ${u}`;c(t,"width",`${a}`),c(t,"height",`${u}`),c(e,"preserveAspectRatio",getComputedStyle(e).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),c(e,"viewBox",f)&&e.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(t)};t()}()}();

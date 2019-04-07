@@ -7,7 +7,7 @@ Research Computing
 ---
 
 # Goals for today
-* Part 1: Learning about supercomputers and Milton.
+* Part 1: Learning about supercomputers and research computing at WEHI.
 * Part 2: Logging on and exploring the Linux Environment.
 * Part 3: Learning about software modules and the batch job submission system.
 * Part 4: Submitting test jobs.
@@ -19,16 +19,16 @@ Research Computing
 # Slide Respository
 * These slides are based on material developed by Lev Lafayette from Research Platform Services at the University of Melbourne.
 * A copy of these slides and sample code is available at: `https://github.com/WEHI-ResearchComputing/MiltonIntro`
-
+* Send me an email: `thomas.e@wehi.edu.au`
 ---
 
-# Research Computing
-* Part of ITS
-* Operate Milton
+# Research Computing at WEHI
+* Part of ITS which is part of professional services
+* Operate our high performance computer (HPC) - Milton
 * Provide support and guidance to researchers
 * Data management
 
-| Whoc            | Role |
+| Who             | Role                                      |
 |:----------------|:-----------------------------------------:|
 | Andrew Isaac    | Head of Research Computing                |
 | Jakub Szarlat   | eResearch                                 |
@@ -41,6 +41,7 @@ Research Computing
 
 # Getting help I
 * More documentation is available on Catalyst: `Catalyst -> Research -> Research Computing`
+	* Documentation website coming soon
 * Help is available at: `helpdesk@wehi.edu.au`. 
 * Other training is also conducted by:
 	* Research Platforms: https://research.unimelb.edu.au/infrastructure/research-platform-services
@@ -49,31 +50,36 @@ Research Computing
 
 # Getting help II
 * Join the slack team: https://milton-wehi.slack.com/signup
-	* This is user to user support. ITS do not monitor it.
+	* This is user to user support. ITS do not (officially) monitor it.
 * Join the MUG mailing list. Send a request to research.computing@wehi.edu.au
+
 ---
 
 
 # Part I: Helpdesk
 * Read the Message of the Day when you login!
-* If you have 
+* If you have
 	* problems with submitting a job
 	* need a new application or extension to an existing application installed
 	* submissions are generating unexpected errors etc., 
 	* Just have a question
 * Email helpdesk: `helpdesk@wehi.edu.au`!
-* Do not email individual sysadmins; we need consolidated records. Please be informative about the error or issue.
+* Do not email individuals; we need consolidated records. Please be informative about the error or issue.
+	* The system(s) you were using, e.g. unix500, batch system, etc.
+	* Provide details such as modules loaded, etc
+	* Copy and paste errors messages and commands when available
 ---
 
 
 # Part 1: Supercomputers and HPC
 * "Supercomputer" means any single computer system that has exceptional processing power for its time. 
 * One popular metric (LINPACK) is the number of floating point operations per second (FLOPS) such a system can carry out (http://top500.org). HPC Challenge and HPCG are broader, more interesting metrics. 
-* High Performance Computer (HPC) is any computer system whose architecture allows for above average performance. High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.
+* High Performance Computer (HPC) is any computer system whose architecture allows for above average performance. 
+* High Throughput Computing (HTC) is an architecture for maximum job completion; capability vs capacity computing.
 ---
 
 
-# Part 1: Clusters and Research Computing
+# Part 1: Clusters
 * Clustered computing is when two or more computers serve a single resource. This improves performance and provides redundancy in case of failure system. Typically commodity systems with a high-speed local network.
 * Research computing refers to the concepts and software applications used by the scientific community to aid research. It does not necessarily equate with high performance computing, or the use of clusters. It is whatever researchers use and do. Not issues of producibility and environments.
 ---
@@ -81,9 +87,11 @@ Research Computing
 
 # Part 1: Parallel Computing
 * With a cluster architecture, applications can be more easily parallelised across them. 
-	* *Data parallel*: running the same task in parallel over different inputs 
-	* *Task parallel*: running a single task in parallel with communication. e.g. sequence alignment; molecular dynamics
-* Further examples of serial versus parallel; weather forecasting, aerodynamic design, fluid mechanics, radiation modelling, molecullar dynamics, CGI rendering for popular movies, etc. Reality is a parallel system!
+	* *Data parallel*: running the same task in parallel over different inputs, sometimes referred to as embarrassingly parallel. 
+	* *Task parallel*: running a single task in parallel with communication. e.g. sequence alignment; molecular dynamics.
+* Software needs to specially written to be task parallel.
+* Within node vs between node parallelism.
+* WEHI systems are designed with data parallelism and within node parallelism in mind.
 ---
 
 
@@ -92,10 +100,15 @@ Research Computing
 * Computer system units or *nodes*, containing memory, local disk, and sockets.
 * Sockets contain a processor
 	* which has several *cores*
-    * each core processes to logical streams of instructions (*hyperthreads*)
-* The term Central Processing Unit, *CPU*, nearly always refers to hyperthread.
-* Logical processes have shared resources (e.g., memory) which may have multiple instruction stream threads.
+    * each core processes two logical streams of instructions (*hyperthreads*)
+* In day to day use the term Central Processing Unit, *CPU*, nearly always refers to a hyperthread.
 ---
+
+# Part 1: A rack
+![rack](../Images/HPC-chasis.png)
+
+---
+
 
 # Part 1: Cloud computing
 * Infrastructure as a Service (IaaS)
@@ -122,7 +135,7 @@ Research Computing
 	* different applications and users can be isolated from each other
 	* Multiple operating systems can run in the same hardware
 	* Machines can be easily moved between different hardware to provide the best resource utilisation
-* Milton uses VMWare data centre software to provide virtualization.
+* Milton uses VMWare data centre software suit to provide virtualization.
 ---
 
 # Part 1: Virtualization
@@ -134,11 +147,11 @@ Research Computing
 # Part 1: Milton Hardware
 * In 2016 WEHI purchased an _on premise_ High Performance Computer called Milton.
 * nearly 2500 cores (2 hyperthreads per core)
-	* A mix of Skylake and Broadwell Intel processors
-	* Up to 56 cores in a single physical node
+	* A mix of Skylake and Broadwell Intel Xenon processors
+	* Up to 64 cores in a single physical node
 * 40TB RAM
 	* configurations from 128GB to 1.5TB (can be reconfigured if required)
-* A mix of 40GbE and 10GbE network connnections
+* A mix of 40GbE and 10GbE network connnections (gigabits per second)
 * 20 nVidia P100 GPUs 
 
 ---
@@ -150,13 +163,17 @@ Research Computing
 
 
 # Part 1: Logging In
-* To log on to Milton you need a WEHI logon - that's is!
+* To log on to Milton you need a WEHI username - that's is!
 * Mac OS 10.x. 
 	* Open a terminal
 	* `ssh unix500`
+		* `ssh <username>@unix500`
 	* Type your password
 * For MS-Windows users, the free PuTTY client is recommended (http://putty.org).
-* ***Note:*** Logging into other systems may be more complicated. e.g.  `ssh eat@spartan.hpc.unimelb.edu.au`
+* You can login from multiple terminal windows!
+* ***Note:*** Logging into other systems may be more complicated. 
+	* e.g.  `ssh eat@spartan.hpc.unimelb.edu.au`
+	* `<username>@<fully qualified system name>`
 ---
 
 # Part 1: Logging in from Windows
@@ -170,8 +187,8 @@ Research Computing
 ---
 
 
-# Part 1: SSH Keys, Config, Data Transfers
-* Consider using an `.ssh/config` file and using passwordless SSH by creating a keypair and adding to your `.ssh/authorized_keys` file on Spartan.
+# Part 1: SSH Keys
+* Consider using an `.ssh/config` file and using passwordless SSH by creating a keypair and adding to your `.ssh/authorized_keys` file on Milton or other target system.
 * SSH Keys will make your life easier. Follow the instructions here: https://dashboard.hpc.unimelb.edu.au/faq/#how-do-setup-passwordless-ssh-login
 ---
 
@@ -197,22 +214,22 @@ Research Computing
 
 # Part 2: Exploring The Environment
 
-| Command     | Explanation |
-|:------------|:---------------------------------------------------------:|
-|`whoami`   | "Who Am I?; prints the effective user id                                  |
-|`pwd`      | "Print working directory"|
-|`ls`       | "List" directory listing  |
+| Command   | Explanation |
+|:----------|:----------------------------------------:|
+|`whoami`   | "Who Am I?; prints the effective user id |
+|`pwd`      | "Print working directory"                |
+|`ls`       | "List" directory listing                 |
 ---
 
 
-# Part 2: Command Options
+# Part 2: Command Options - the `ls` command
 * Linux commands often come with options expressed as: `<command> --<option[s]>`
 * Options can be expressed as full words or abbreviated characters.
 
-| Command     | Explanation                                                                |
-|-------------|:----------------------------------------------------:|
-|`ls -lart`| Directory listing with options (long, all, reverse time)|
-|`ls -lash`   | Directory listing with options (long, all, size in human readable	   |
+| Command     | Explanation                                             |
+|-------------|:-------------------------------------------------------:|
+|`ls -lart`   | long, all, reverse time |
+|`ls -lah`   | long, all, human readable size  |
 ---
 
 
@@ -227,6 +244,28 @@ Linux commands come with "man" (manual) pages, which provide a terse description
 |`whatis <command>`   | A terse description of the command        |
 ---
 
+# Command line editing
+* up and down arrow keys navigate through your command line history
+	* `history` command
+* left and right arrrow keys move the text on the command line
+
+| Key stroke    | Explanation                         |
+|:--------------|:------------------------------------|
+| `up arrow`    | previous command                    |
+| `down arrow`  | next command                        |
+| `ctrl-a`      | beggining of the line               |
+| `ctrl-e`      | end of the line                     |
+| `ctrl-u`      | delete to the beginning of the line |
+| `ctrl-k`      | delete to the end of the line       |
+
+---
+
+# Tab to completion
+* Hit `<tab>` and the current text will complete if there is a unique completion
+* Hit `<tab>` twice to get a list of possible completions
+* Try it: `ls -l /stornext/HPCScratch/evan/training/Lesson_1.md`
+___
+ 
 # Part 2: the `less` command
 * used for conviently viewing large amounts of text
 * try `less /stornext/HPCScratch/evan/training/Lesson_1.md`
@@ -237,19 +276,13 @@ Linux commands come with "man" (manual) pages, which provide a terse description
 | `u`           | page up        |
 | `/<text>`     | find forwards  |
 | `?<text>`     | find backwards |
+| `/`, `?`      | repeat find    |
 | `g`           | goto to top    |
 | `G`           | goto to bottom |
 | `q`           | quit           |
 | `h`           | help           |
 
 ---
-
-# Tab to completion
-* Hit `<tab>` and the current text will complete if there is a unique completion
-* Hit `<tab>` twice to get a list of possible completions
-* Try it: `ls -l /stornext/HPCScratch/evan/training/Lesson_1.md`
-___
- 
 
 # Part 2: Pipes
 Linux also have very useful 'pipes' and redirect commands. To pipe one command through another use the '|' symbol.
@@ -264,10 +297,10 @@ Linux also have very useful 'pipes' and redirect commands. To pipe one command t
 # Part 2: Redirects
 To redirect output use the '>' symbol. To redirect input (for example, to feed data to a command) use the '<'. Concatenation is achieved through the use of '>>' symbol. 
 
-| Command         | Explanation         |
-|:----------------|:-------------------:|
-| `w > list.txt`  | 'w' is a combination of who, uptime and ps -a, redirected|
-| `w >> list.txt` | Same command, concatenated|
+| Command         | Explanation                                               |
+|:----------------|:---------------------------------------------------------:|
+| `w > list.txt`  | 'w' is a combination of who, uptime and ps -a, redirected |
+| `w >> list.txt` | Same command, concatenated                                |
 ---
 
 
@@ -282,7 +315,7 @@ To redirect output use the '>' symbol. To redirect input (for example, to feed d
 |:--------|:-----------------|
 | `cd`    | change directory |
 | `pwd`   | present working directory |
-* Files are located via paths
+* Files are located via paths - a series of directory names seperated by `/`
 * Paths can be 
 	* absolute - the start with a '/'
 	* relative to the working directory - without a leading '/'
@@ -318,7 +351,7 @@ To copy a file from within a system use the `cp` command. Common options include
 | Command           | Explanation        |
 |:------------------|:------------------:|
 | `cp source destination` | Copy a file from source to destination |
-| `cp -r source destination` | Recursive copy (e.g., a directory)  |
+| `cp -r source destination` | Recursive copy (i.e., a directory)  |
 | `cp -a source destination` | Recursive copy as archive (permissions, links)|
 ---
 
@@ -327,13 +360,15 @@ Try
 `cp list.txt list2.txt`
 `cp -r /stornext/HPCScratch/evan/training .`
 
+---
+
 
 # Part 2: Copying Files Between Systems
 To copy files to between systems desktop use SCP (secure copy protocol) or SFTP (secure file transfer protocol), combining the ssh and cp functionality. The `cp` options can also be used. The source or destination address should also require a remote shell login.
 
 | Command     | Explanation     |
 |:------------|:---------:|
-| `scp source.address:/path/ destination.address:/path/`| Copies files on a network        |
+| `scp source.address:/path/ destination.address:/path/`| Copies files across a network  |
 ---
 
 
@@ -372,7 +407,7 @@ For example; `rsync -avz --update lev@spartan.hpc.unimelb.edu.au:files/workfiles
 # Part 2: Creating Directories, Copying and Moving Files
 * Directories can be created with the `mkdir` command (e.g., `mkdir braf`).
 * Files can be copied with the `cp` command 
-	* `cd` - change you you home directory	 
+	* `cd` - change to your home directory	 
 	* `cp /stornext/HPCScratch/evan/training/gattaca.txt ~` copy a file to you home directory
 	* `cp gattaca.txt gattaca2.txt` make another copy of the file
 * Files can be moved or _renamed_ with the `mv` command (e.g., `mv gattaca2.txt braf`)
